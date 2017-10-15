@@ -90,6 +90,12 @@ abstract class ${pluginClass}RecipeSupport
   @Inject
   Provider<HttpClientFacet> httpClientFacet
 
+  @Inject
+  Provider<PurgeUnusedFacet> purgeUnusedFacet
+
+  @Inject
+  Provider<NegativeCacheFacet> negativeCacheFacet
+
   protected ${pluginClass}RecipeSupport(final Type type, final Format format) {
     super(type, format)
   }
