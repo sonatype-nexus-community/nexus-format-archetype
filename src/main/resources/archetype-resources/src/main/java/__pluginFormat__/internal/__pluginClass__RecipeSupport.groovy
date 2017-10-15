@@ -10,10 +10,12 @@
  * of Sonatype, Inc. Apache Maven is a trademark of the Apache Software Foundation. M2eclipse is a trademark of the
  * Eclipse Foundation. All other trademarks are the property of their respective owners.
  */
-package ${package}.repository.${pluginFormat}.internal
+package ${package}.${pluginFormat}.internal
 
 import javax.inject.Inject
 import javax.inject.Provider
+
+import ${package}.${pluginFormat}.internal.security.${pluginClass}SecurityFacet
 
 import org.sonatype.nexus.repository.Format
 import org.sonatype.nexus.repository.RecipeSupport

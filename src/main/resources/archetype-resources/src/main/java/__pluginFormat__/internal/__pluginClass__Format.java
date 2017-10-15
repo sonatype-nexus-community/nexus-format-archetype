@@ -10,27 +10,24 @@
  * of Sonatype, Inc. Apache Maven is a trademark of the Apache Software Foundation. M2eclipse is a trademark of the
  * Eclipse Foundation. All other trademarks are the property of their respective owners.
  */
-package ${package}.repository.${pluginFormat}.internal;
+package ${package}.${pluginFormat}.internal;
 
-import javax.inject.Inject;
 import javax.inject.Named;
+import javax.inject.Singleton;
 
-import org.sonatype.nexus.repository.security.ContentPermissionChecker;
-import org.sonatype.nexus.repository.security.SecurityFacetSupport;
-import org.sonatype.nexus.repository.security.VariableResolverAdapter;
+import org.sonatype.nexus.repository.Format;
 
 /**
- * ${pluginClass} format security facet.
+ * ${pluginClass} repository format.
  */
-@Named
-public class ${pluginClass}SecurityFacet
-    extends SecurityFacetSupport
+@Named(${pluginClass}Format.NAME)
+@Singleton
+public class ${pluginClass}Format
+    extends Format
 {
-  @Inject
-  public ${pluginClass}SecurityFacet(final ${pluginClass}FormatSecurityContributor securityResource,
-                            @Named("simple") final VariableResolverAdapter variableResolverAdapter,
-                            final ContentPermissionChecker contentPermissionChecker)
-  {
-    super(securityResource, variableResolverAdapter, contentPermissionChecker);
+  public static final String NAME = "${pluginFormat}";
+
+  public ${pluginClass}Format() {
+    super(NAME);
   }
 }
