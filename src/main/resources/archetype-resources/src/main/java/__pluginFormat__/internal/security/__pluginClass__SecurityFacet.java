@@ -15,6 +15,7 @@ package ${package}.${pluginFormat}.internal.security;
 import javax.inject.Inject;
 import javax.inject.Named;
 
+import org.sonatype.nexus.repository.config.Configuration;
 import org.sonatype.nexus.repository.security.ContentPermissionChecker;
 import org.sonatype.nexus.repository.security.SecurityFacetSupport;
 import org.sonatype.nexus.repository.security.VariableResolverAdapter;
@@ -32,5 +33,10 @@ public class ${pluginClass}SecurityFacet
                             final ContentPermissionChecker contentPermissionChecker)
   {
     super(securityResource, variableResolverAdapter, contentPermissionChecker);
+  }
+
+  @Override
+  protected void doValidate(final Configuration configuration) throws Exception {
+    super.doValidate(configuration);
   }
 }

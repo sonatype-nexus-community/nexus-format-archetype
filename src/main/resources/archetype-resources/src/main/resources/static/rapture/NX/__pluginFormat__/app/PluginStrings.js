@@ -28,7 +28,7 @@ Ext.define('NX.${pluginFormat}.app.PluginStrings', {
     Repository_Facet_${pluginClass}Facet_Title: '${pluginClass} Settings',
     Search${pluginClass}_Group: '${pluginClass} Repositories',
     Search${pluginClass}_License_FieldLabel: 'License',
-    Search${pluginClass}_Text: 'Conan',
+    Search${pluginClass}_Text: '${pluginClass}',
     Search${pluginClass}_Description: 'Search for components in ${pluginClass} repositories',
   }
 }, function(self) {
