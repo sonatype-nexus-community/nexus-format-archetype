@@ -24,8 +24,8 @@ Generating a format plugin is as easy as running the following:
 
 It is recommended to keep the naming of the following parameters consistent with the plugin you wish to develop:
 
-**pluginFormat** = _A name with no whitespace that best describes the format_
+**pluginFormat** = _A name with no whitespace that best describes the format_ (e.g. raw, yum, npm etc.)
 
-**pluginClass** = _The class name that will be used to generate the plugin boilerplate code_
+**pluginClass** = _The class name that will be used to generate the plugin boilerplate code_ (e.g. Raw, Yum, Npm etc.)
 
 **version** = _The version of the format to be developed_      
