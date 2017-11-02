@@ -8,7 +8,7 @@ Build the archetype:
 
     mvn clean install
 
-Change directory to a new folder were you wish to generate the format boilerplate code.
+Change directory to a new folder where you wish to generate the format boilerplate code.
  
 Generating a format plugin is as easy as running the following:
      
