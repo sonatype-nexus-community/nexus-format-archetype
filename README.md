@@ -1,4 +1,4 @@
-# format-plugin
+# nexus-format-archetype
 Archetype for creating Nexus format plugin with a _lot_ of the boilerplate required to start development already created.
 
 ## How to create a format
@@ -13,7 +13,7 @@ Change directory to a new folder were you wish to generate the format boilerplat
 Generating a format plugin is as easy as running the following:
      
     mvn archetype:generate                              \ 
-      -DarchetypeArtifactId=format-plugin               \
+      -DarchetypeArtifactId=nexus-forms-archetype       \
       -DarchetypeGroupId=org.sonatype.nexus.archetype   \
       -DarchetypeVersion=1.0-SNAPSHOT                   \
       -DgroupId=com.sonatype.repository                 \

@@ -3,8 +3,8 @@
   <modelVersion>4.0.0</modelVersion>
  
   <groupId>org.sonatype.nexus.archetype</groupId>
-  <artifactId>format-plugin</artifactId>
+  <artifactId>nexus-format-archetype</artifactId>
   <version>1.0-SNAPSHOT</version>
-  <name>Archetype to create nexus plugins</name>
+  <name>Archetype to create a nexus format plugin</name>
 
 </project>
