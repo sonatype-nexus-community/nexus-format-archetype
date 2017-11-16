@@ -22,6 +22,7 @@ import org.sonatype.nexus.repository.RecipeSupport
 import org.sonatype.nexus.repository.Type
 import org.sonatype.nexus.repository.attributes.AttributesFacet
 import org.sonatype.nexus.repository.cache.NegativeCacheFacet
+import org.sonatype.nexus.repository.cache.NegativeCacheHandler
 import org.sonatype.nexus.repository.http.PartialFetchHandler
 import org.sonatype.nexus.repository.httpclient.HttpClientFacet
 import org.sonatype.nexus.repository.purge.PurgeUnusedFacet
@@ -97,6 +98,9 @@ abstract class ${pluginClass}RecipeSupport
 
   @Inject
   Provider<NegativeCacheFacet> negativeCacheFacet
+
+  @Inject
+  NegativeCacheHandler negativeCacheHandler
 
   protected ${pluginClass}RecipeSupport(final Type type, final Format format) {
     super(type, format)
