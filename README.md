@@ -13,14 +13,14 @@ Change directory to a new folder where you wish to generate the format boilerpla
 Generating a format plugin is as easy as running the following:
      
     mvn archetype:generate                              \ 
-      -DarchetypeArtifactId=nexus-format-archetype       \
+      -DarchetypeArtifactId=nexus-format-archetype      \
       -DarchetypeGroupId=org.sonatype.nexus.archetype   \
       -DarchetypeVersion=1.0-SNAPSHOT                   \
-      -DgroupId=org.sonatype.repository                 \
+      -DgroupId=org.sonatype.nexus.plugins              \
       -DartifactId=nexus-repository-foo                 \
       -DpluginFormat=foo                                \
       -DpluginClass=Foo                                 \
-      -Dversion=1.0-SNAPSHOT                            \
+      -Dversion=0.1-SNAPSHOT                            \
 
 It is recommended to keep the naming of the following parameters consistent with the plugin you wish to develop:
 
