@@ -16,11 +16,11 @@ Generating a format plugin is as easy as running the following:
       -DarchetypeArtifactId=nexus-format-archetype      \
       -DarchetypeGroupId=org.sonatype.nexus.archetype   \
       -DarchetypeVersion=1.0-SNAPSHOT                   \
-      -DgroupId=org.sonatype.nexus.plugins              \
+      -DgroupId=org.sonatype.nexus.repository           \
       -DartifactId=nexus-repository-foo                 \
       -DpluginFormat=foo                                \
       -DpluginClass=Foo                                 \
-      -Dversion=0.1-SNAPSHOT                            \
+      -Dversion=0.0.1
 
 It is recommended to keep the naming of the following parameters consistent with the plugin you wish to develop:
 
