@@ -24,7 +24,7 @@
   <groupId>${groupId}</groupId>
   <artifactId>${artifactId}</artifactId>
   <name>${project.groupId}:${project.artifactId}</name>
-  <version>1.0.0</version>
+  <version>${version}</version>
   <inceptionYear>2018</inceptionYear>
   <packaging>bundle</packaging>
 

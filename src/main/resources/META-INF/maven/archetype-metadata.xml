@@ -5,6 +5,7 @@ name="nexus-format-archetype">
   <requiredProperties>
     <requiredProperty key="pluginFormat"></requiredProperty>
     <requiredProperty key="pluginClass"></requiredProperty>
+    <requiredProperty key="version"></requiredProperty>
   </requiredProperties>
 
   <fileSets>
