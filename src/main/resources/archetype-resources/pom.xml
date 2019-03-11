@@ -19,7 +19,7 @@
   <parent>
     <groupId>org.sonatype.nexus.plugins</groupId>
     <artifactId>nexus-plugins</artifactId>
-    <version>3.8.0-02</version>
+    <version>3.14.0-04</version>
   </parent>
   <groupId>${groupId}</groupId>
   <artifactId>${artifactId}</artifactId>
@@ -45,11 +45,6 @@
     <dependency>
       <groupId>org.apache.commons</groupId>
       <artifactId>commons-compress</artifactId>
-    </dependency>
-
-    <dependency>
-      <groupId>se.sawano.java</groupId>
-      <artifactId>alphanumeric-comparator</artifactId>
     </dependency>
 
     <dependency>
