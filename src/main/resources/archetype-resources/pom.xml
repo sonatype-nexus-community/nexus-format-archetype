@@ -25,7 +25,7 @@
   <artifactId>${artifactId}</artifactId>
   <name>${project.groupId}:${project.artifactId}</name>
   <version>${version}</version>
-  <inceptionYear>2018</inceptionYear>
+  <inceptionYear>2019</inceptionYear>
   <packaging>bundle</packaging>
 
   <dependencies>
