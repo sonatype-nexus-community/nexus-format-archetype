@@ -45,8 +45,8 @@ The standard [Maven Archetype Plugin](https://maven.apache.org/archetype/maven-a
 docs are a good place to start.
 
 We also use the [archetype integration-test goal](https://maven.apache.org/archetype/maven-archetype-plugin/integration-test-mojo.html)
-to verify the archetype works as expected. You may need to update some of the reference files after changes are made 
-that affect generated source code. 
+to verify the archetype works as expected. You may need to update some of the [reference](src/test/resources/projects/it1/reference/)
+files after changes are made that affect generated source code. 
 
 You can manually run the integration tests via:
 
