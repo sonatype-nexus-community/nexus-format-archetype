@@ -13,7 +13,9 @@ before_install:
   - echo $GPG_OWNERTRUST | base64 --decode | $GPG_EXECUTABLE --import-ownertrust
 
 script:
-  mvn clean package archetype:integration-test --settings .maven.xml -B -U deploy -Prelease
+  mvn clean package archetype:integration-test --settings . maven.xml --batch-mode  -U deploy -Prelease
+  mvn release:prepare --settings .maven.xml --batch-mode -V -Prelease -Darguments="--settings .maven.xml"
+  mvn release:perform --settings .maven.xml --batch-mode -V -Prelease -Darguments="--settings .maven.xml"
 
 before_deploy:
   - mvn help:evaluate -N -Dexpression=project.version|grep -v '\['
