@@ -27,6 +27,7 @@ Generating a format plugin is as easy as running the following:
       -DarchetypeArtifactId=nexus-format-archetype      \
       -DarchetypeGroupId=org.sonatype.nexus.archetypes  \
       -DarchetypeVersion=1.0-SNAPSHOT                   \
+      -DnexusPluginsVersion=3.18.0-01                   \
       -DgroupId=org.sonatype.nexus.repository           \
       -DartifactId=nexus-repository-foo                 \
       -DpluginFormat=foo                                \
@@ -35,15 +36,19 @@ Generating a format plugin is as easy as running the following:
 
 Repeated for the "newline" challenged:
 
-    mvn archetype:generate -DarchetypeArtifactId=nexus-format-archetype -DarchetypeGroupId=org.sonatype.nexus.archetypes -DarchetypeVersion=1.0-SNAPSHOT -DgroupId=org.sonatype.nexus.repository -DartifactId=nexus-repository-foo -DpluginFormat=foo -DpluginClass=Foo -Dversion=0.0.1
+    mvn archetype:generate -DarchetypeArtifactId=nexus-format-archetype -DarchetypeGroupId=org.sonatype.nexus.archetypes -DarchetypeVersion=1.0-SNAPSHOT -DnexusPluginsVersion=3.18.0-01 -DgroupId=org.sonatype.nexus.repository -DartifactId=nexus-repository-foo -DpluginFormat=foo -DpluginClass=Foo -Dversion=0.0.1
     
+Optional parameters can be omitted. A shorter example using default parameter values:
+
+    mvn archetype:generate -DarchetypeArtifactId=nexus-format-archetype -DarchetypeGroupId=org.sonatype.nexus.archetypes -DarchetypeVersion=1.0-SNAPSHOT -DpluginFormat=foo -DpluginClass=Foo
+
 It is recommended to keep the naming of the following parameters consistent with the plugin you wish to develop:
 
 **pluginFormat** = _A name with no whitespace that best describes the format_ (e.g. raw, yum, npm etc.)
 
 **pluginClass** = _The class name that will be used to generate the plugin boilerplate code_ (e.g. Raw, Yum, Npm etc.)
 
-**version** = _The version of the format to be developed_      
+**version** = _The version of the format to be developed_ (default: 0.0.1-SNAPSHOT)     
 
 ## How to contribute to this archetype
 
