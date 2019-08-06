@@ -135,6 +135,7 @@
                   <goal>sign</goal>
                 </goals>
                 <configuration>
+                  <useAgent>false</useAgent>
                   <gpgArguments>
                     <arg>--no-tty</arg>
                     <arg>--batch</arg>
