@@ -12,8 +12,10 @@ cache:
 ## export GPG details
 before_install:
   - $GPG_EXECUTABLE --version
+  - $GPG_EXECUTABLE --list-public-keys
   - echo $GPG_SECRET_KEYS | base64 --decode | $GPG_EXECUTABLE --import --no-tty --batch
   - echo $GPG_OWNERTRUST | base64 --decode | $GPG_EXECUTABLE --import-ownertrust --no-tty --batch
+  - $GPG_EXECUTABLE --list-public-keys
 
 script:
   - mvn clean package archetype:integration-test help:active-profiles --settings .maven.xml --batch-mode -V -U deploy -Prelease -X
