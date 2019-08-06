@@ -11,6 +11,7 @@ cache:
 
 ## export GPG details
 before_install:
+  - $GPG_EXECUTABLE --version
   - echo $GPG_SECRET_KEYS | base64 --decode | $GPG_EXECUTABLE --import --no-tty --batch
   - echo $GPG_OWNERTRUST | base64 --decode | $GPG_EXECUTABLE --import-ownertrust --no-tty --batch
 
