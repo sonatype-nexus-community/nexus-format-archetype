@@ -18,6 +18,7 @@ before_install:
   - $GPG_EXECUTABLE --list-public-keys
 
 script:
+  - export GPG_TTY=$(tty)
   - mvn clean package archetype:integration-test help:active-profiles --settings .maven.xml --batch-mode -V -U deploy -Prelease -X
 
 before_deploy:

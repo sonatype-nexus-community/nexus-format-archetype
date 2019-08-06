@@ -135,7 +135,6 @@
                   <goal>sign</goal>
                 </goals>
                 <configuration>
-                  <useAgent>false</useAgent>
 <!--
                   <gpgArguments>
                     <arg>&#45;&#45;pinentry-mode</arg>
