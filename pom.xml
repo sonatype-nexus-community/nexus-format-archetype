@@ -57,6 +57,41 @@
     </repository>
   </distributionManagement>
 
+  <properties>
+    <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+    <defaultNexusPluginsVersion>3.18.0-01</defaultNexusPluginsVersion>
+  </properties>
+
+  <build>
+    <filters>
+      <!--
+      Filter ensures the generated pom groupId, artifactId, and version get intended values, instead of parent values.
+      -->
+      <filter>src/test/my-filter-values.properties</filter>
+    </filters>
+    <resources>
+      <resource>
+        <directory>src/main/resources</directory>
+        <filtering>true</filtering>
+      </resource>
+    </resources>
+    <testResources>
+      <testResource>
+        <directory>src/test/resources</directory>
+        <filtering>true</filtering>
+      </testResource>
+    </testResources>
+    <plugins>
+      <plugin>
+        <artifactId>maven-resources-plugin</artifactId>
+        <version>3.1.0</version>
+        <configuration>
+          <escapeString>\</escapeString>
+        </configuration>
+      </plugin>
+    </plugins>
+  </build>
+
   <profiles>
     <profile>
       <id>release</id>
