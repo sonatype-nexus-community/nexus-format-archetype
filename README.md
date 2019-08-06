@@ -49,7 +49,7 @@ Coordinates of the archetype:
 
 **archetypeGroupId** = _Must be:_ org.sonatype.nexus.archetypes
 
-**archetypeVersion** = The version of this archetype (e.g. 1.0-SNAPSHOT)
+**archetypeVersion** = _The version of this archetype_ (e.g. 1.0-SNAPSHOT)
 
 It is recommended to keep the naming of the following parameters consistent with the plugin you wish to develop:
 
