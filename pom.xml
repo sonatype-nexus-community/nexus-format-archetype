@@ -136,12 +136,10 @@
                 </goals>
                 <configuration>
                   <gpgArguments>
+                    <arg>--no-tty</arg>
+                    <arg>--batch</arg>
                     <arg>--pinentry-mode</arg>
                     <arg>loopback</arg>
-<!--
-                    <arg>&#45;&#45;no-tty</arg>
-                    <arg>&#45;&#45;batch</arg>
--->
                   </gpgArguments>
                 </configuration>
               </execution>
