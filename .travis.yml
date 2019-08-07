@@ -21,6 +21,7 @@ script:
   - ls -alh /usr/bin/pinentry
   - gpgconf
   - mkdir -p ~/.gpupg
+  - echo 'allow-loopback-pinentry' >> ~/.gpupg/gpg-agent.conf
   - echo 'pinentry-program /usr/bin/pinentry' >> ~/.gpupg/gpg-agent.conf
   - gpg-connect-agent reloadagent /bye
   - mvn clean package archetype:integration-test help:active-profiles --settings .maven.xml --batch-mode -V -U deploy -Prelease
