@@ -16,9 +16,12 @@ before_install:
 
 script:
   #- find / | grep 'gpg-agent.conf'
-  - cat /usr/share/upstart/sessions/gpg-agent.conf
+  #- cat /usr/share/upstart/sessions/gpg-agent.conf
+  #- echo 'pinentry-program /usr/bin/pinentry' >> /usr/share/upstart/sessions/gpg-agent.conf
   - ls -alh /usr/bin/pinentry
-  - echo 'pinentry-program /usr/bin/pinentry' >> /usr/share/upstart/sessions/gpg-agent.conf
+  - gpgconf
+  - mkdir -p ~/.gpupg/gpg-agent.conf
+  - echo 'pinentry-program /usr/bin/pinentry' >> ~/.gpupg/gpg-agent.conf
   - gpg-connect-agent reloadagent /bye
   - mvn clean package archetype:integration-test help:active-profiles --settings .maven.xml --batch-mode -V -U deploy -Prelease
 
