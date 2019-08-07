@@ -15,7 +15,10 @@ before_install:
   - echo $GPG_OWNERTRUST | base64 --decode | $GPG_EXECUTABLE --import-ownertrust
 
 script:
-  - find / | grep 'gpg-agent.conf'
+  #- find / | grep 'gpg-agent.conf'
+  - cat /usr/share/upstart/sessions/gpg-agent.conf
+  - ls -alh /usr/bin/pinentry
+  - echo 'pinentry-program /usr/bin/pinentry' >> /usr/share/upstart/sessions/gpg-agent.conf
   - gpg-connect-agent reloadagent /bye
   - mvn clean package archetype:integration-test help:active-profiles --settings .maven.xml --batch-mode -V -U deploy -Prelease
 
