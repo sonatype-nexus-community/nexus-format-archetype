@@ -24,7 +24,9 @@ script:
   - echo 'allow-loopback-pinentry' >> ~/.gpupg/gpg-agent.conf
   - echo 'pinentry-program /usr/bin/pinentry' >> ~/.gpupg/gpg-agent.conf
   - gpg-connect-agent reloadagent /bye
-  - mvn clean package archetype:integration-test help:active-profiles --settings .maven.xml --batch-mode -V -U deploy -Prelease
+  #- mvn clean package archetype:integration-test help:active-profiles --settings .maven.xml --batch-mode -V -U deploy -Prelease
+  # disable deploy until gpg pinentry loopback issue is solved
+  - mvn clean package archetype:integration-test help:active-profiles --settings .maven.xml --batch-mode -V -U
 
 before_deploy:
   - mvn help:evaluate -N -Dexpression=project.version|grep -v '\['
