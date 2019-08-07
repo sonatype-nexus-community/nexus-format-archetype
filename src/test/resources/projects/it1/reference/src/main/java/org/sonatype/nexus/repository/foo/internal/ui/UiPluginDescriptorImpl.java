@@ -1,6 +1,6 @@
 /*
  * Sonatype Nexus (TM) Open Source Version
- * Copyright (c) 2018-present Sonatype, Inc.
+ * Copyright (c) ${current.year}-present Sonatype, Inc.
  * All rights reserved. Includes the third-party code listed at http://links.sonatype.com/products/nexus/oss/attributions.
  *
  * This program and the accompanying materials are made available under the terms of the Eclipse Public License Version 1.0,
@@ -12,11 +12,11 @@
  */
 package org.sonatype.nexus.repository.foo.internal.ui;
 
+import org.sonatype.nexus.rapture.UiPluginDescriptorSupport;
+
 import javax.annotation.Priority;
 import javax.inject.Named;
 import javax.inject.Singleton;
-
-import org.sonatype.nexus.rapture.UiPluginDescriptorSupport;
 
 @Named
 @Singleton
