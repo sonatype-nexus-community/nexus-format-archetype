@@ -15,7 +15,7 @@ before_install:
   - echo $GPG_OWNERTRUST | base64 --decode | $GPG_EXECUTABLE --import-ownertrust
 
 script:
-  - cat ~/.gnupg/gpg-agent.conf
+  - find / | grep 'gpg-agent.conf'
   - gpg-connect-agent reloadagent /bye
   - mvn clean package archetype:integration-test help:active-profiles --settings .maven.xml --batch-mode -V -U deploy -Prelease
 
