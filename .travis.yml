@@ -14,7 +14,7 @@ before_install:
   - $GPG_EXECUTABLE --version
   - $GPG_EXECUTABLE --list-public-keys
   - echo $GPG_SECRET_KEYS | base64 --decode | $GPG_EXECUTABLE --import --no-tty --batch
-  - echo $GPG_OWNERTRUST | base64 --decode | $GPG_EXECUTABLE --import-ownertrust --no-tty --batch
+  - echo $GPG_OWNERTRUST | base64 --decode | $GPG_EXECUTABLE --import-ownertrust
   - $GPG_EXECUTABLE --list-public-keys
 
 script:
