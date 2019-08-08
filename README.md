@@ -93,7 +93,7 @@ You can manually run the integration tests via:
   produced by the archetype. One quick way to find out which files differ is to compare the following two
   directories:
   
-    $ diff -r target/test-classes/projects/it1/reference/ target/test-classes/projects/it1/project/nexus-repository-foo
+    $ diff -r target/test-classes/projects/it1/reference/ target/test-classes/projects/it1/project/nexus-repository-foo/
     diff -r target/test-classes/projects/it1/reference/pom.xml target/test-classes/projects/it1/project/nexus-repository-foo/pom.xml
     29c29
     <   <packaging>zzzbundle</packaging>
