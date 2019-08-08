@@ -1,8 +1,9 @@
+#set( $currentYear = $package.getClass().forName("java.util.Date").newInstance().getYear() + 1900 )
 <?xml version="1.0" encoding="UTF-8"?>
 <!--
 
     Sonatype Nexus (TM) Open Source Version
-    Copyright (c) ${current.year}-present Sonatype, Inc.
+    Copyright (c) ${currentYear}-present Sonatype, Inc.
     All rights reserved. Includes the third-party code listed at http://links.sonatype.com/products/nexus/oss/attributions.
 
     This program and the accompanying materials are made available under the terms of the Eclipse Public License Version 1.0,
@@ -25,7 +26,7 @@
   <artifactId>\${artifactId}</artifactId>
   <name>\${project.groupId}:\${project.artifactId}</name>
   <version>\${version}</version>
-  <inceptionYear>${current.year}</inceptionYear>
+  <inceptionYear>${currentYear}</inceptionYear>
   <packaging>bundle</packaging>
 
   <dependencies>

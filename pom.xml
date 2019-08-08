@@ -6,6 +6,14 @@
   <artifactId>nexus-format-archetype</artifactId>
   <version>1.0-SNAPSHOT</version>
 
+  <dependencies>
+    <dependency>
+      <groupId>org.apache.velocity</groupId>
+      <artifactId>velocity</artifactId>
+      <version>1.7</version>
+    </dependency>
+  </dependencies>
+
   <name>Archetype to create a nexus format plugin</name>
   <licenses>
     <license>
@@ -62,6 +70,7 @@
     <defaultNexusPluginsVersion>3.18.0-01</defaultNexusPluginsVersion>
   </properties>
 
+
   <build>
     <filters>
       <!--
@@ -88,24 +97,6 @@
         <configuration>
           <escapeString>\</escapeString>
         </configuration>
-      </plugin>
-      <plugin>
-        <groupId>org.codehaus.mojo</groupId>
-        <artifactId>build-helper-maven-plugin</artifactId>
-        <version>3.0.0</version>
-        <executions>
-          <execution>
-            <id>timestamp-property</id>
-            <goals>
-              <goal>timestamp-property</goal>
-            </goals>
-            <phase>validate</phase>
-            <configuration>
-              <name>current.year</name>
-              <pattern>yyyy</pattern>
-            </configuration>
-          </execution>
-        </executions>
       </plugin>
     </plugins>
   </build>
