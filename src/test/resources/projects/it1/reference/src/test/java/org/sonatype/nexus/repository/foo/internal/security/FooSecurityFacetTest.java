@@ -12,10 +12,6 @@
  */
 package org.sonatype.nexus.repository.foo.internal.security;
 
-import org.apache.shiro.authz.AuthorizationException;
-import org.junit.Before;
-import org.junit.Test;
-import org.mockito.Mock;
 import org.sonatype.goodies.testsupport.TestSupport;
 import org.sonatype.nexus.repository.Format;
 import org.sonatype.nexus.repository.Repository;
@@ -23,6 +19,11 @@ import org.sonatype.nexus.repository.http.HttpMethods;
 import org.sonatype.nexus.repository.security.ContentPermissionChecker;
 import org.sonatype.nexus.repository.security.VariableResolverAdapter;
 import org.sonatype.nexus.repository.view.Request;
+
+import org.apache.shiro.authz.AuthorizationException;
+import org.junit.Before;
+import org.junit.Test;
+import org.mockito.Mock;
 
 import static org.junit.Assert.fail;
 import static org.mockito.Matchers.any;

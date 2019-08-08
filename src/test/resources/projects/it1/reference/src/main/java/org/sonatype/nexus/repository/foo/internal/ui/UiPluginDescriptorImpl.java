@@ -12,11 +12,11 @@
  */
 package org.sonatype.nexus.repository.foo.internal.ui;
 
-import org.sonatype.nexus.rapture.UiPluginDescriptorSupport;
-
 import javax.annotation.Priority;
 import javax.inject.Named;
 import javax.inject.Singleton;
+
+import org.sonatype.nexus.rapture.UiPluginDescriptorSupport;
 
 @Named
 @Singleton

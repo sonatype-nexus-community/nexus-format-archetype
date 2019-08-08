@@ -12,10 +12,10 @@
  */
 package org.sonatype.nexus.repository.foo.internal;
 
-import org.sonatype.nexus.repository.Format;
-
 import javax.inject.Named;
 import javax.inject.Singleton;
+
+import org.sonatype.nexus.repository.Format;
 
 /**
  * Foo repository format.

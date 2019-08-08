@@ -12,13 +12,13 @@
  */
 package org.sonatype.nexus.repository.foo.internal.security;
 
+import javax.inject.Inject;
+import javax.inject.Named;
+
 import org.sonatype.nexus.repository.config.Configuration;
 import org.sonatype.nexus.repository.security.ContentPermissionChecker;
 import org.sonatype.nexus.repository.security.SecurityFacetSupport;
 import org.sonatype.nexus.repository.security.VariableResolverAdapter;
-
-import javax.inject.Inject;
-import javax.inject.Named;
 
 /**
  * Foo format security facet.
