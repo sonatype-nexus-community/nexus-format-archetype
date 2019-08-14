@@ -62,6 +62,14 @@
     <defaultNexusPluginsVersion>3.18.0-01</defaultNexusPluginsVersion>
   </properties>
 
+  <dependencies>
+    <dependency>
+      <groupId>org.apache.velocity</groupId>
+      <artifactId>velocity</artifactId>
+      <version>1.7</version>
+    </dependency>
+  </dependencies>
+
   <build>
     <filters>
       <!--
@@ -88,6 +96,26 @@
         <configuration>
           <escapeString>\</escapeString>
         </configuration>
+      </plugin>
+      <plugin><!--
+        Only updates IT reference source files to the current year. Velocity macro does the real generated values.
+        -->
+        <groupId>org.codehaus.mojo</groupId>
+        <artifactId>build-helper-maven-plugin</artifactId>
+        <version>3.0.0</version>
+        <executions>
+          <execution>
+            <id>timestamp-property</id>
+            <goals>
+              <goal>timestamp-property</goal>
+            </goals>
+            <phase>validate</phase>
+            <configuration>
+              <name>ITReferenceYear</name>
+              <pattern>yyyy</pattern>
+            </configuration>
+          </execution>
+        </executions>
       </plugin>
     </plugins>
   </build>

@@ -80,3 +80,25 @@ files after changes are made that affect generated source code.
 You can manually run the integration tests via:
 
     mvn clean package archetype:integration-test
+
+#### Archetype IT Debugging notes
+
+  After running the above `... package archetype:integration-test` command, you may see integration test errors like:
+  
+    [ERROR] Failed to execute goal org.apache.maven.plugins:maven-archetype-plugin:3.1.1:integration-test (default-cli) on project nexus-format-archetype: 
+    [ERROR] Archetype IT 'it1' failed: Some content are not equals
+
+  This occurs when [archetype-resources](src/main/resources) files have been changed, 
+  but the IT [reference](src/test/resources/projects/it1/reference) source files no longer match the output 
+  produced by the archetype. One quick way to find out which files differ is to compare the following two
+  directories:
+  
+    $ diff -r target/test-classes/projects/it1/reference/ target/test-classes/projects/it1/project/nexus-repository-foo/
+    diff -r target/test-classes/projects/it1/reference/pom.xml target/test-classes/projects/it1/project/nexus-repository-foo/pom.xml
+    29c29
+    <   <packaging>zzzbundle</packaging>
+    ---
+    >   <packaging>bundle</packaging>
+
+  The first directory holds the "expected" (reference) output. The second directory holds the "actual" output generated 
+  by running the archetype integration test. 
