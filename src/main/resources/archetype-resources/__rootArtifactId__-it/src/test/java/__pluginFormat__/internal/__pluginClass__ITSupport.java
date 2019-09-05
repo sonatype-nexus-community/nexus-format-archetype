@@ -11,7 +11,19 @@
  * Eclipse Foundation. All other trademarks are the property of their respective owners.
  */
 package ${package}.${pluginFormat}.internal;
-    {pluginFormat}.internal.fixtures.RepositoryRule${pluginClass};
+
+import java.net.URL;
+
+import javax.annotation.Nonnull;
+
+import org.sonatype.nexus.pax.exam.NexusPaxExamSupport;
+import org.sonatype.nexus.plugins.${pluginFormat}.internal.fixtures.RepositoryRule${pluginClass};
+import org.sonatype.nexus.repository.Repository;
+import org.sonatype.nexus.testsuite.testsupport.RepositoryITSupport;
+
+import org.junit.Rule;
+
+import static com.google.common.base.Preconditions.checkNotNull;
 
 public class ${pluginClass}ITSupport
     extends RepositoryITSupport

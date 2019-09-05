@@ -12,6 +12,24 @@
  */
 package ${package}.${pluginFormat}.internal;
 
+import org.sonatype.goodies.httpfixture.server.fluent.Server;
+import org.sonatype.nexus.pax.exam.NexusPaxExamSupport;
+import org.sonatype.nexus.repository.Repository;
+import org.sonatype.nexus.repository.http.HttpStatus;
+import org.sonatype.nexus.testsuite.testsupport.FormatClientSupport;
+import org.sonatype.nexus.testsuite.testsupport.NexusITSupport;
+
+import org.hamcrest.MatcherAssert;
+import org.junit.Test;
+import org.ops4j.pax.exam.Configuration;
+import org.ops4j.pax.exam.Option;
+
+import static org.hamcrest.MatcherAssert.assertThat;
+import static org.hamcrest.Matchers.is;
+import static org.sonatype.goodies.httpfixture.server.fluent.Behaviours.content;
+import static org.sonatype.goodies.httpfixture.server.fluent.Behaviours.error;
+import static org.sonatype.nexus.testsuite.testsupport.FormatClientSupport.status;
+
 public class ${pluginClass}ProxyIT
     extends ${pluginClass}ITSupport
 {

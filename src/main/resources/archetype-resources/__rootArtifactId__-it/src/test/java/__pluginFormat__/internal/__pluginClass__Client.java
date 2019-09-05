@@ -12,6 +12,13 @@
  */
 package ${package}.${pluginFormat}.internal;
 
+import java.net.URI;
+
+import org.sonatype.nexus.testsuite.testsupport.FormatClientSupport;
+
+import org.apache.http.client.protocol.HttpClientContext;
+import org.apache.http.impl.client.CloseableHttpClient;
+
 public class ${pluginClass}Client
     extends FormatClientSupport
 {

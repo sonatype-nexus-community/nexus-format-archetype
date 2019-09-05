@@ -10,13 +10,13 @@
  * of Sonatype, Inc. Apache Maven is a trademark of the Apache Software Foundation. M2eclipse is a trademark of the
  * Eclipse Foundation. All other trademarks are the property of their respective owners.
  */
-package $ import javax.annotation.Priority;
+package ${package}.${pluginFormat}.internal.ui;
+
+import javax.annotation.Priority;
 import javax.inject.Named;
 import javax.inject.Singleton;
 
 import org.sonatype.nexus.rapture.UiPluginDescriptorSupport;
-
-{package}.${pluginFormat}.internal.ui;
 
 @Named
 @Singleton
