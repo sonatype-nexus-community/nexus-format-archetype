@@ -10,22 +10,15 @@
  * of Sonatype, Inc. Apache Maven is a trademark of the Apache Software Foundation. M2eclipse is a trademark of the
  * Eclipse Foundation. All other trademarks are the property of their respective owners.
  */
-package org.sonatype.nexus.plugins.foo.internal;
+package org.sonatype.nexus.plugins.foo.internal.proxy;
 
-import java.net.URI;
+import org.sonatype.nexus.repository.Facet;
+import org.sonatype.nexus.repository.proxy.ProxyFacet;
+import org.sonatype.nexus.repository.view.Content;
 
-import org.sonatype.nexus.testsuite.testsupport.FormatClientSupport;
-
-import org.apache.http.client.protocol.HttpClientContext;
-import org.apache.http.impl.client.CloseableHttpClient;
-
-public class FooClient
-    extends FormatClientSupport
+@Facet.Exposed
+public interface FooProxyFacet
+    extends ProxyFacet
 {
-  public FooClient(final CloseableHttpClient httpClient,
-                     final HttpClientContext httpClientContext,
-                     final URI repositoryBaseUri)
-  {
-    super(httpClient, httpClientContext, repositoryBaseUri);
-  }
+  Content getAsset(final String assetPath);
 }

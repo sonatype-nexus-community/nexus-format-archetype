@@ -1,6 +1,6 @@
 /*
  * Sonatype Nexus (TM) Open Source Version
- * Copyright (c) ${ITReferenceYear}-present Sonatype, Inc.
+ * Copyright (c) ${currentYear}-present Sonatype, Inc.
  * All rights reserved. Includes the third-party code listed at http://links.sonatype.com/products/nexus/oss/attributions.
  *
  * This program and the accompanying materials are made available under the terms of the Eclipse Public License Version 1.0,
@@ -10,22 +10,32 @@
  * of Sonatype, Inc. Apache Maven is a trademark of the Apache Software Foundation. M2eclipse is a trademark of the
  * Eclipse Foundation. All other trademarks are the property of their respective owners.
  */
-package org.sonatype.nexus.plugins.foo.internal;
+package org.sonatype.nexus.plugins.${pluginFormat}.internal;
 
-import java.net.URI;
+import javax.annotation.Nonnull;
 
-import org.sonatype.nexus.testsuite.testsupport.FormatClientSupport;
+import org.sonatype.nexus.repository.cache.CacheControllerHolder.CacheType;
 
-import org.apache.http.client.protocol.HttpClientContext;
-import org.apache.http.impl.client.CloseableHttpClient;
+import static org.sonatype.nexus.repository.cache.CacheControllerHolder.CONTENT;
+import static org.sonatype.nexus.repository.cache.CacheControllerHolder.METADATA;
 
-public class FooClient
-    extends FormatClientSupport
+/**
+ * Asset kinds for ${pluginClass}.
+ */
+public enum AssetKind
 {
-  public FooClient(final CloseableHttpClient httpClient,
-                     final HttpClientContext httpClientContext,
-                     final URI repositoryBaseUri)
-  {
-    super(httpClient, httpClientContext, repositoryBaseUri);
+  // @todo Change these enums as needed for this format
+  PACKAGES(METADATA),
+  ARCHIVE(CONTENT);
+
+  private final CacheType cacheType;
+
+  AssetKind(final CacheType cacheType) {
+    this.cacheType = cacheType;
+  }
+
+  @Nonnull
+  public CacheType getCacheType() {
+    return cacheType;
   }
 }

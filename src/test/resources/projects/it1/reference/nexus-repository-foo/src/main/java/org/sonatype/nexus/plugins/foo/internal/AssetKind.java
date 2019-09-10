@@ -10,35 +10,32 @@
  * of Sonatype, Inc. Apache Maven is a trademark of the Apache Software Foundation. M2eclipse is a trademark of the
  * Eclipse Foundation. All other trademarks are the property of their respective owners.
  */
-package org.sonatype.nexus.plugins.foo.internal.fixtures
+package org.sonatype.nexus.plugins.foo.internal;
 
-import javax.annotation.Nonnull
+import javax.annotation.Nonnull;
 
-import org.sonatype.nexus.repository.Repository
-import org.sonatype.nexus.repository.config.Configuration
-import org.sonatype.nexus.testsuite.testsupport.fixtures.ConfigurationRecipes
+import org.sonatype.nexus.repository.cache.CacheControllerHolder.CacheType;
 
-import groovy.transform.CompileStatic
-
+import static org.sonatype.nexus.repository.cache.CacheControllerHolder.CONTENT;
+import static org.sonatype.nexus.repository.cache.CacheControllerHolder.METADATA;
 
 /**
- * Factory for Foo {@link Repository} {@link Configuration}
+ * Asset kinds for Foo.
  */
-@CompileStatic
-trait FooRepoRecipes
-    extends ConfigurationRecipes
+public enum AssetKind
 {
-  @Nonnull
-  Repository createFooProxy(final String name, final String remoteUrl)
-  {
-    createRepository(createProxy(name, 'foo-proxy', remoteUrl))
+  // @todo Change these enums as needed for this format
+  PACKAGES(METADATA),
+  ARCHIVE(CONTENT);
+
+  private final CacheType cacheType;
+
+  AssetKind(final CacheType cacheType) {
+    this.cacheType = cacheType;
   }
 
   @Nonnull
-  Repository createRHosted(final String name)
-  {
-    createRepository(createHosted(name, 'foo-hosted'))
+  public CacheType getCacheType() {
+    return cacheType;
   }
-
-  abstract Repository createRepository(final Configuration configuration)
 }
