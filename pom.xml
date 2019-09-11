@@ -6,7 +6,9 @@
   <artifactId>nexus-format-archetype</artifactId>
   <version>1.0-SNAPSHOT</version>
 
-  <name>Archetype to create a nexus format plugin</name>
+  <name>Nexus Format Plugin Archetype</name>
+  <description>Archetype to create a nexus format plugin</description>
+  <url>https://github.com/sonatype-nexus-community/nexus-format-archetype</url>
   <licenses>
     <license>
       <name>Eclipse Public License</name>
