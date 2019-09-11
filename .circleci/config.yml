@@ -4,17 +4,15 @@ orbs:
   github-maven-deploy: github-maven-deploy/github-maven-deploy@1.0.5
 
 mvn-build-test-command: &mvn-build-test-command
-  mvn-build-test-command: mvn clean verify -PbuildKar -Dit
+  mvn-build-test-command: mvn clean verify archetype:integration-test
 
 mvn-collect-artifacts-command: &mvn-collect-artifacts-command
   mvn-collect-artifacts-command: |
     mkdir -p ~/project/artifacts/junit/
-    cp ~/project/nexus-repository-conda/target/surefire-reports/*.xml ~/project/artifacts/junit/
-    cp ~/project/nexus-repository-conda/target/nexus-repository-* ~/project/artifacts/
-    cp ~/project/nexus-repository-conda-it/target/failsafe-reports/*.xml ~/project/artifacts/junit/
+    # no reporting files to collect from archetype:integration-test goal
 
 mvn-deploy-command: &mvn-deploy-command
-  mvn-deploy-command: mvn -s .circleci/.maven.xml clean deploy -PbuildKar -DdeployAtEnd=true -DperformRelease=true -DskipTests -Dspotbugs.skip=true
+  mvn-deploy-command: mvn -s .circleci/.maven.xml clean deploy -DdeployAtEnd=true -DperformRelease=true -DskipTests -Dspotbugs.skip=true
   context: rso
 
 workflows:

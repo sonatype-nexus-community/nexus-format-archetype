@@ -77,7 +77,7 @@ We also use the [archetype integration-test goal](https://maven.apache.org/arche
 to verify the archetype works as expected. You may need to update some of the [reference](src/test/resources/projects/it1/reference/)
 files after changes are made that affect generated source code. 
 
-You can manually run the integration tests via:
+You can manually run the archetype integration tests via:
 
     mvn clean package archetype:integration-test
 
