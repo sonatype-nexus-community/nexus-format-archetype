@@ -122,7 +122,16 @@
 
   <profiles>
     <profile>
-      <id>release</id>
+      <id>deploy</id>
+      <!--
+      only sign during deploy phase
+      -->
+      <activation>
+        <property>
+          <name>performRelease</name>
+          <value>true</value>
+        </property>
+      </activation>
       <build>
         <plugins>
           <plugin>
