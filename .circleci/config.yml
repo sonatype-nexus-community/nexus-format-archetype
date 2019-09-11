@@ -9,6 +9,7 @@ mvn-build-test-command: &mvn-build-test-command
 mvn-collect-artifacts-command: &mvn-collect-artifacts-command
   mvn-collect-artifacts-command: |
     mkdir -p ~/project/artifacts/junit/
+    # no reporting files to collect from archetype:integration-test goal
 
 mvn-deploy-command: &mvn-deploy-command
   mvn-deploy-command: mvn -s .circleci/.maven.xml clean deploy -DdeployAtEnd=true -DperformRelease=true -DskipTests -Dspotbugs.skip=true
