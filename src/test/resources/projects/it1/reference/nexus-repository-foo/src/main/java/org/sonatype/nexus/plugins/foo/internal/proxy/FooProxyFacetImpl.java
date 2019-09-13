@@ -79,9 +79,9 @@ public class FooProxyFacetImpl
     TokenMatcher.State matcherState = fooPathUtils.matcherState(context);
     switch (assetKind) {
       case PACKAGES:
-        return getAsset(fooPathUtils.buildAssetPath(matcherState, INDEX_HTML));
+        return getAsset(fooPathUtils.buildAssetPath(matcherState, PACKAGE_FILENAME));
       case ARCHIVE:
-        return getAsset(fooPathUtils.buildAssetPath(matcherState, CHANNELDATA_JSON));
+        return getAsset(fooPathUtils.buildAssetPath(matcherState, ASSET_FILENAME));
       default:
         throw new IllegalStateException("Received an invalid AssetKind of type: " + assetKind.name());
     }
@@ -106,11 +106,11 @@ public class FooProxyFacetImpl
       case PACKAGES:
         return putMetadata(content,
             assetKind,
-            fooPathUtils.buildAssetPath(matcherState, INDEX_HTML));
+            fooPathUtils.buildAssetPath(matcherState, PACKAGE_FILENAME));
       case ARCHIVE:
         return putMetadata(content,
             assetKind,
-            fooPathUtils.buildAssetPath(matcherState, CHANNELDATA_JSON));
+            fooPathUtils.buildAssetPath(matcherState, ASSET_FILENAME));
       default:
         throw new IllegalStateException("Received an invalid AssetKind of type: " + assetKind.name());
     }

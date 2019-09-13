@@ -79,9 +79,9 @@ public class ${pluginClass}ProxyFacetImpl
     TokenMatcher.State matcherState = ${pluginFormat}PathUtils.matcherState(context);
     switch (assetKind) {
       case PACKAGES:
-        return getAsset(${pluginFormat}PathUtils.buildAssetPath(matcherState, INDEX_HTML));
+        return getAsset(${pluginFormat}PathUtils.buildAssetPath(matcherState, PACKAGE_FILENAME));
       case ARCHIVE:
-        return getAsset(${pluginFormat}PathUtils.buildAssetPath(matcherState, CHANNELDATA_JSON));
+        return getAsset(${pluginFormat}PathUtils.buildAssetPath(matcherState, ASSET_FILENAME));
       default:
         throw new IllegalStateException("Received an invalid AssetKind of type: " + assetKind.name());
     }
@@ -106,11 +106,11 @@ public class ${pluginClass}ProxyFacetImpl
       case PACKAGES:
         return putMetadata(content,
             assetKind,
-            ${pluginFormat}PathUtils.buildAssetPath(matcherState, INDEX_HTML));
+            ${pluginFormat}PathUtils.buildAssetPath(matcherState, PACKAGE_FILENAME));
       case ARCHIVE:
         return putMetadata(content,
             assetKind,
-            ${pluginFormat}PathUtils.buildAssetPath(matcherState, CHANNELDATA_JSON));
+            ${pluginFormat}PathUtils.buildAssetPath(matcherState, ASSET_FILENAME));
       default:
         throw new IllegalStateException("Received an invalid AssetKind of type: " + assetKind.name());
     }
