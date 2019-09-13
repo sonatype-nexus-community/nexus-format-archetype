@@ -41,7 +41,8 @@ import org.sonatype.nexus.repository.view.matchers.token.TokenMatcher;
 import org.sonatype.nexus.transaction.UnitOfWork;
 
 import static com.google.common.base.Preconditions.checkNotNull;
-import static org.sonatype.nexus.plugins.${pluginFormat}.internal.util.${pluginClass}PathUtils.*;
+import static org.sonatype.nexus.plugins.${pluginFormat}.internal.util.${pluginClass}PathUtils.ASSET_FILENAME;
+import static org.sonatype.nexus.plugins.${pluginFormat}.internal.util.${pluginClass}PathUtils.PACKAGE_FILENAME;
 import static org.sonatype.nexus.repository.storage.AssetEntityAdapter.P_ASSET_KIND;
 
 /**
