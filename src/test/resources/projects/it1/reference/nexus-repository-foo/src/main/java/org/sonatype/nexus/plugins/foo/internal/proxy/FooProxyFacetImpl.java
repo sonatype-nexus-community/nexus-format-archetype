@@ -88,7 +88,6 @@ public class FooProxyFacetImpl
   }
 
   @TransactionalTouchBlob
-  //protected Content getAsset(final String assetPath) {
   public Content getAsset(final String assetPath) {
     StorageTx tx = UnitOfWork.currentTx();
 
