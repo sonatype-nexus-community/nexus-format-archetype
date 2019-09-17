@@ -48,7 +48,7 @@ public class ${pluginClass}PathUtilsTest
   public void buildAssetPath() {
     String result = underTest.buildAssetPath(state, ${pluginClass}PathUtils.PACKAGE_FILENAME);
 
-    assertThat(result, is(equalTo("/myTokenValue/myPackageFilename.ext")));
+    assertThat(result, is(equalTo("/myTokenValue/myPackageFilename.txt")));
   }
 
   private Map<String, String> setupTokens(final String tokenValue) {

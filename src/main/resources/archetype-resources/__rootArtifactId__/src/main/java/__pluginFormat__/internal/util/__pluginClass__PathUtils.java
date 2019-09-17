@@ -29,7 +29,7 @@ import static com.google.common.base.Preconditions.checkNotNull;
 public class ${pluginClass}PathUtils
 {
   // @todo Change this to a valid filename for your format
-  public static final String PACKAGE_FILENAME = "myPackageFilename.ext";
+  public static final String PACKAGE_FILENAME = "myPackageFilename.txt";
 
   // @todo Change this to a valid filename for your format
   public static final String ASSET_FILENAME = "myAssetFilename.fil";
