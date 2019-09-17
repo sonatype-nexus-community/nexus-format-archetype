@@ -213,5 +213,12 @@ The project has a “format” module, and an “IT” module.
   
     mvn clean verify -Dit.debug=true
 
-  After the IT starts, you can attach a remote debugger to port 5005. Keep trying to attach the remote debugger until
+  After the IT starts (you would see the following in a terminal:
+  
+      -------------------------------------------------------
+       T E S T S
+      -------------------------------------------------------
+      Running org.sonatype.nexus.plugins...
+
+   ), you can attach a remote debugger to port 5005. Keep trying to attach the remote debugger until
    the conneciton succeeds.
