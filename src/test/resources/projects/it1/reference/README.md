@@ -215,10 +215,13 @@ The project has a “format” module, and an “IT” module.
 
   After the IT starts (you would see the following in a terminal:
   
+      ...
+      [INFO] --- maven-failsafe-plugin:2.18.1:integration-test (default) @ nexus-repository-foo-it ---
+      ...
       -------------------------------------------------------
        T E S T S
       -------------------------------------------------------
       Running org.sonatype.nexus.plugins...
 
    ), you can attach a remote debugger to port 5005. Keep trying to attach the remote debugger until
-   the conneciton succeeds.
+   the connection succeeds.
