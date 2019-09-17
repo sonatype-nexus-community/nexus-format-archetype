@@ -216,7 +216,7 @@ The project has a “format” module, and an “IT” module.
   After the IT starts (you would see the following in a terminal:
   
       ...
-      [INFO] --- maven-failsafe-plugin:2.18.1:integration-test (default) @ nexus-repository-foo-it ---
+      [INFO] --- maven-failsafe-plugin:2.18.1:integration-test (default) @ nexus-repository-...-it ---
       ...
       -------------------------------------------------------
        T E S T S
