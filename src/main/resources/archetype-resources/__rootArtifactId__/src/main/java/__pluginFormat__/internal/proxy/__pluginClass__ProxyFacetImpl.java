@@ -172,7 +172,7 @@ public class ${pluginClass}ProxyFacetImpl
 
     Asset asset = ${pluginFormat}DataAccess.findAsset(tx, bucket, assetPath);
 
-    if (assetKind.equals(AssetKind.PACKAGES)) {
+    if (assetKind.equals(AssetKind.ARCHIVE)) {
       if (asset == null) {
         asset = tx.createAsset(bucket, component);
         asset.name(assetPath);
