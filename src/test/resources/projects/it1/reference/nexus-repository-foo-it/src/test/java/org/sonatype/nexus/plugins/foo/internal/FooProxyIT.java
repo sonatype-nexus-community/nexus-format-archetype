@@ -28,12 +28,14 @@ import static org.hamcrest.MatcherAssert.assertThat;
 import static org.hamcrest.Matchers.is;
 import static org.sonatype.goodies.httpfixture.server.fluent.Behaviours.content;
 import static org.sonatype.goodies.httpfixture.server.fluent.Behaviours.error;
+import static org.sonatype.nexus.plugins.foo.internal.util.FooPathUtils.PACKAGE_FILENAME;
 import static org.sonatype.nexus.testsuite.testsupport.FormatClientSupport.status;
 
 public class FooProxyIT
     extends FooITSupport
 {
-  private static final String TEST_PATH = "some/valid/path/for/foo/remote/repo";
+  // @todo Change test path for your format
+  private static final String TEST_PATH = "some/valid/path/for/foo/remote/" + PACKAGE_FILENAME;
 
   private FooClient proxyClient;
 

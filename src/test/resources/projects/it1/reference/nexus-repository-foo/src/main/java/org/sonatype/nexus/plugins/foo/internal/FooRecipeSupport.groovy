@@ -116,14 +116,14 @@ abstract class FooRecipeSupport
     super(type, format)
   }
 
-  // @todo Add matcher methods here
+  // @todo Add/change matcher methods here
 
   static Matcher packageFooMatcher() {
-    buildTokenMatcherForPatternAndAssetKind("/{path:.+}/${PACKAGE_FILENAME}", AssetKind.PACKAGES, GET, HEAD)
+    buildTokenMatcherForPatternAndAssetKind("/{myTokenName:.+}/${PACKAGE_FILENAME}", AssetKind.PACKAGES, GET, HEAD)
   }
 
   static Matcher assetFooMatcher() {
-    buildTokenMatcherForPatternAndAssetKind("/{path:.+}/${ASSET_FILENAME}", AssetKind.ARCHIVE, GET, HEAD)
+    buildTokenMatcherForPatternAndAssetKind("/{myTokenName:.+}/${ASSET_FILENAME}", AssetKind.ARCHIVE, GET, HEAD)
   }
 
   static Matcher buildTokenMatcherForPatternAndAssetKind(final String pattern,

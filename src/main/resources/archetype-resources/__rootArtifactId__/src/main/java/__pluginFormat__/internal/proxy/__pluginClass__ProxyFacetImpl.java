@@ -109,7 +109,7 @@ public class ${pluginClass}ProxyFacetImpl
             assetKind,
             ${pluginFormat}PathUtils.buildAssetPath(matcherState, PACKAGE_FILENAME));
       case ARCHIVE:
-        return putMetadata(content,
+        return put${pluginClass}Package(content,
             assetKind,
             ${pluginFormat}PathUtils.buildAssetPath(matcherState, ASSET_FILENAME));
       default:
@@ -119,35 +119,30 @@ public class ${pluginClass}ProxyFacetImpl
 
   private Content put${pluginClass}Package(final Content content,
                                   final AssetKind assetKind,
-                                  final String assetPath, final String arch, final String name, final String version)
+                                  final String assetPath)
       throws IOException
   {
     StorageFacet storageFacet = facet(StorageFacet.class);
 
     try (TempBlob tempBlob = storageFacet.createTempBlob(content.openInputStream(), ${pluginClass}DataAccess.HASH_ALGORITHMS)) {
-      Component component = findOrCreateComponent(arch, name, version);
+      Component component = findOrCreateComponent(assetPath);
 
       return findOrCreateAsset(tempBlob, content, assetKind, assetPath, component);
     }
   }
 
   @TransactionalStoreBlob
-  protected Component findOrCreateComponent(final String arch, final String name, final String version) {
+  protected Component findOrCreateComponent(final String assetPath) {
     StorageTx tx = UnitOfWork.currentTx();
     Bucket bucket = tx.findBucket(getRepository());
 
-    // TODO: Not sure if group is right for arch, but seems ok at first pass
     Component component = ${pluginFormat}DataAccess.findComponent(tx,
         getRepository(),
-        arch,
-        name,
-        version);
+        assetPath);
 
     if (component == null) {
       component = tx.createComponent(bucket, getRepository().getFormat())
-          .group(arch)
-          .name(name)
-          .version(version);
+          .name(assetPath);
     }
     tx.saveComponent(component);
 

@@ -58,15 +58,11 @@ public class ${pluginClass}DataAccess
   @Nullable
   public Component findComponent(final StorageTx tx,
                                  final Repository repository,
-                                 final String arch,
-                                 final String name,
-                                 final String version)
+                                 final String assetPath)
   {
     Iterable<Component> components = tx.findComponents(
         Query.builder()
-            .where(P_NAME).eq(name)
-            .and(P_GROUP).eq(arch)
-            .and(P_VERSION).eq(version)
+            .where(P_NAME).eq(assetPath)
             .build(),
         singletonList(repository)
     );

@@ -225,3 +225,7 @@ The project has a “format” module, and an “IT” module.
 
    ), you can attach a remote debugger to port 5005. Keep trying to attach the remote debugger until
    the connection succeeds.
+
+  When running ITs, the Nexus Repository Manager will write log output to the following file:
+  
+      ${rootArtifactId}/${rootArtifactId}-it/target/it-data/1/nexus3/log/nexus.log

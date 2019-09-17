@@ -51,11 +51,10 @@ public class ${pluginClass}PathUtilsTest
     assertThat(result, is(equalTo("/myTokenValue/myPackageFilename.ext")));
   }
 
-private Map<String, String> setupTokens(final String tokenValue)
-    {
+  private Map<String, String> setupTokens(final String tokenValue) {
     Map<String, String> tokens = new HashMap<>();
     tokens.put("myTokenName", tokenValue);
 
     return tokens;
-    }
+  }
 }
