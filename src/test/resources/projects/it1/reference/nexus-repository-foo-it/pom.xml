@@ -149,7 +149,7 @@
             </goals>
             <configuration>
               <target>
-                <unzip src="${org.sonatype.nexus.testsuite:nexus-it-suite-data:jar}" dest="${project.build.directory}/it-resources">
+                <unzip src="${org.sonatype.nexus.testsuite:nexus-it-suite-data:jar}" dest="\${project.build.directory}/it-resources">
                   <patternset>
                     <exclude name="META-INF/**"/>
                   </patternset>

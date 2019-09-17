@@ -32,12 +32,22 @@ import org.sonatype.nexus.repository.storage.DefaultComponentMaintenanceImpl
 import org.sonatype.nexus.repository.storage.StorageFacet
 import org.sonatype.nexus.repository.storage.UnitOfWorkHandler
 import org.sonatype.nexus.repository.view.ConfigurableViewFacet
+import org.sonatype.nexus.repository.view.Context
+import org.sonatype.nexus.repository.view.Matcher
 import org.sonatype.nexus.repository.view.handlers.BrowseUnsupportedHandler
 import org.sonatype.nexus.repository.view.handlers.ConditionalRequestHandler
 import org.sonatype.nexus.repository.view.handlers.ContentHeadersHandler
 import org.sonatype.nexus.repository.view.handlers.ExceptionHandler
 import org.sonatype.nexus.repository.view.handlers.HandlerContributor
 import org.sonatype.nexus.repository.view.handlers.TimingHandler
+import org.sonatype.nexus.repository.view.matchers.ActionMatcher
+import org.sonatype.nexus.repository.view.matchers.logic.LogicMatchers
+import org.sonatype.nexus.repository.view.matchers.token.TokenMatcher
+
+import static org.sonatype.nexus.plugins.foo.internal.util.${pluginClass}PathUtils.ASSET_FILENAME
+import static org.sonatype.nexus.plugins.foo.internal.util.${pluginClass}PathUtils.PACKAGE_FILENAME
+import static org.sonatype.nexus.repository.http.HttpMethods.GET
+import static org.sonatype.nexus.repository.http.HttpMethods.HEAD
 
 /**
  * Support for ${pluginClass} recipes.
@@ -105,4 +115,31 @@ abstract class ${pluginClass}RecipeSupport
   protected ${pluginClass}RecipeSupport(final Type type, final Format format) {
     super(type, format)
   }
+
+  // @todo Add matcher methods here
+
+  static Matcher package${pluginClass}Matcher() {
+    buildTokenMatcherForPatternAndAssetKind("/{path:.+}/${PACKAGE_FILENAME}", AssetKind.PACKAGES, GET, HEAD)
+  }
+
+  static Matcher asset${pluginClass}Matcher() {
+    buildTokenMatcherForPatternAndAssetKind("/{path:.+}/${ASSET_FILENAME}", AssetKind.ARCHIVE, GET, HEAD)
+  }
+
+  static Matcher buildTokenMatcherForPatternAndAssetKind(final String pattern,
+                                                         final AssetKind assetKind,
+                                                         final String... actions) {
+    LogicMatchers.and(
+        new ActionMatcher(actions),
+        new TokenMatcher(pattern),
+        new Matcher() {
+          @Override
+          boolean matches(final Context context) {
+            context.attributes.set(AssetKind.class, assetKind)
+            return true
+          }
+        }
+    )
+  }
+
 }
