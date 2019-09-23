@@ -1,12 +1,10 @@
 # nexus-format-archetype
 
 <!--
-[![Maven Central](https://maven-badges.herokuapp.com/maven-central/org.sonatype.nexus.archetypes/nexus-format-archetype/badge.svg)](https://maven-badges.herokuapp.com/maven-central/org.sonatype.nexus.archetypes/nexus-format-archetype)
--->
 [Maven Central - Snapshot](https://repository.sonatype.org/content/repositories/snapshots/org/sonatype/nexus/archetypes/nexus-format-archetype/)
-
-
-[![Build Status](https://travis-ci.org/sonatype-nexus-community/nexus-format-archetype.svg?branch=master)](https://travis-ci.org/sonatype-nexus-community/nexus-format-archetype) 
+-->
+[![Maven Central](https://img.shields.io/maven-central/v/org.sonatype.nexus.archetypes/nexus-format-archetype.svg?label=Maven%20Central)](https://search.maven.org/search?q=g:%22org.sonatype.nexus.archetypes%22%20AND%20a:%22nexus-format-archetype%22)
+[![CircleCI](https://circleci.com/gh/sonatype-nexus-community/nexus-format-archetype.svg?style=svg)](https://circleci.com/gh/sonatype-nexus-community/nexus-format-archetype) 
 [![Join the chat at https://gitter.im/sonatype/nexus-developers](https://badges.gitter.im/sonatype/nexus-developers.svg)](https://gitter.im/sonatype/nexus-developers?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
 [![DepShield Badge](https://depshield.sonatype.org/badges/sonatype-nexus-community/nexus-format-archetype/depshield.svg)](https://depshield.github.io)
 
@@ -76,6 +74,8 @@ docs are a good place to start.
 We also use the [archetype integration-test goal](https://maven.apache.org/archetype/maven-archetype-plugin/integration-test-mojo.html)
 to verify the archetype works as expected. You may need to update some of the [reference](src/test/resources/projects/it1/reference/)
 files after changes are made that affect generated source code. 
+
+Currently, the archetype integration test requires Java 8 (as does Nexus Repository Manager) to run.
 
 You can manually run the archetype integration tests via:
 
