@@ -25,7 +25,6 @@
 
   <artifactId>${artifactId}-parent</artifactId>
 
-  <groupId>org.sonatype.nexus.plugins</groupId>
   <version>${version}</version>
   <packaging>pom</packaging>
 
