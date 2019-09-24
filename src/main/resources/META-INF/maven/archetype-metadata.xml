@@ -27,6 +27,7 @@ name="nexus-format-archetype">
       <includes>
         <include>README.md</include>
         <include>docs/*</include>
+        <include>Dockerfile</include>
       </includes>
     </fileSet>
   </fileSets>

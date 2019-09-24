@@ -56,15 +56,22 @@ If everything checks out, the bundle for ${pluginFormat} should be available in 
 
 #[[####]]# Build with Docker
 
-`docker build -t ${rootArtifactId}:${version} .`
+    docker build -t ${rootArtifactId} .
 
 #[[####]]# Run as a Docker container
 
-`docker run -d -p 8081:8081 --name nexus ${rootArtifactId}:${version}` 
+    docker run -d -p 8081:8081 --name ${rootArtifactId} ${rootArtifactId} 
 
 For further information like how to persist volumes check out [the GitHub repo for our official image](https://github.com/sonatype/docker-nexus3).
 
-The application will now be available from your browser at http://localhost:8081
+After allowing some time to spin up, the application will be available from your browser at http://localhost:8081.
+
+To read the generated admin password for your first login to the web UI, you can use the commands below against the running docker container:
+
+    docker exec -it ${rootArtifactId} /bin/bash
+    $ cat /nexus-data/admin.password
+
+For simplicity, you should check `Enable anonymous access` in the prompts following your first login.   
 
 #[[##]]# Using ${pluginClass} With Nexus Repository Manager 3
 
@@ -228,6 +235,15 @@ The project has a “format” module, and an “IT” module.
    ), you can attach a remote debugger to port 5005. Keep trying to attach the remote debugger until
    the connection succeeds.
 
+   After each IT runs, you have to reconnect the remote debugger.
+   
+   You can run a single IT by adding the `-Dit.test=MyIntegrationTestToRunIT` property. The example below also skips
+    running the unit tests.
+    
+      mvn clean verify -Dit.debug=true -Dtest=skip -Dit.test=MyIntegrationTestToRunIT
+      
   When running ITs, the Nexus Repository Manager will write log output to the following file:
   
       ${rootArtifactId}/${rootArtifactId}-it/target/it-data/1/nexus3/log/nexus.log
+      
+   With multiple ITs, the `1` in the path above will be incremented for each IT.
