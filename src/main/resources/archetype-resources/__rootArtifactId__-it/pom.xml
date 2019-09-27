@@ -22,7 +22,7 @@
     <version>${version}</version>
   </parent>
 
-  <artifactId>${artifactId}-it</artifactId>
+  <artifactId>${rootArtifactId}-it</artifactId>
 
   <dependencies>
     <!--
