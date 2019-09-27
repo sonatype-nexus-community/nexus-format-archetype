@@ -28,6 +28,7 @@ name="nexus-format-archetype">
         <include>README.md</include>
         <include>docs/*</include>
         <include>Dockerfile</include>
+        <include>.circleci/*</include>
       </includes>
     </fileSet>
   </fileSets>
