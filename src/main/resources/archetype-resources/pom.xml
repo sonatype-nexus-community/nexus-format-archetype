@@ -24,7 +24,7 @@
     <version>${nexusPluginsVersion}</version>
   </parent>
 
-  <artifactId>${artifactId}-parent</artifactId>
+  <artifactId>${rootArtifactId}-parent</artifactId>
   <version>${version}</version>
   <packaging>pom</packaging>
 
