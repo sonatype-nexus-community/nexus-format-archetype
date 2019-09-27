@@ -7,7 +7,7 @@ name="nexus-format-archetype">
       <defaultValue>${defaultNexusPluginsVersion}</defaultValue>
     </requiredProperty>
     <requiredProperty key="groupId">
-      <defaultValue>org.sonatype.nexus.repository</defaultValue>
+      <defaultValue>org.sonatype.nexus.plugins</defaultValue>
     </requiredProperty>
     <requiredProperty key="pluginFormat"></requiredProperty>
     <requiredProperty key="artifactId">
