@@ -39,7 +39,7 @@ Repeated for the "newline" challenged:
     
 Optional parameters can be omitted. A shorter example using default parameter values:
 
-    mvn archetype:generate -DarchetypeArtifactId=nexus-format-archetype -DarchetypeGroupId=org.sonatype.nexus.archetypes -DarchetypeVersion=1.0-SNAPSHOT -DpluginFormat=foo
+    mvn archetype:generate -DarchetypeArtifactId=nexus-format-archetype -DarchetypeGroupId=org.sonatype.nexus.archetypes -DarchetypeVersion=1.0-SNAPSHOT -DpluginFormat=foo -DpluginClass=Foo
 
 #### Required parameters:
 
@@ -55,6 +55,8 @@ It is recommended to keep the naming of the following parameters consistent with
 
 **pluginFormat** = _A name with no whitespace that best describes the format_ (e.g. raw, yum, npm etc.)
 
+**pluginClass** = _The class name that will be used to generate the plugin boilerplate code_ (e.g. Raw, Yum, Npm etc.)
+
 #### Optional parameters:
 
 **nexusPluginsVersion** = _The version of Nexus to use in the format to be developed_ 
@@ -65,8 +67,6 @@ It is recommended to keep the naming of the following parameters consistent with
 **groupId** = _The groupId (and package) of the format to be developed_ (default: org.sonatype.nexus.plugins)
 
 **version** = _The version of the format to be developed_ (default: 0.0.1-SNAPSHOT)     
-
-**pluginClass** = _The class name that will be used to generate the plugin boilerplate code_ (e.g. Raw, Yum, Npm etc.) (default: capitalized ${pluginFormat})
 
 ## How to contribute to this archetype
 
