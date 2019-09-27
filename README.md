@@ -64,7 +64,7 @@ It is recommended to keep the naming of the following parameters consistent with
 
 **artifactId** = _The artifactId of the format to be developed_ (default: nexus-repository-${pluginFormat})
 
-**groupId** = _The groupId (and package) of the format to be developed_ (default: org.sonatype.nexus.repository)
+**groupId** = _The groupId (and package) of the format to be developed_ (default: org.sonatype.nexus.plugins)
 
 **version** = _The version of the format to be developed_ (default: 0.0.1-SNAPSHOT)     
 
