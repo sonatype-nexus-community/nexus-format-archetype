@@ -17,7 +17,7 @@
   <modelVersion>4.0.0</modelVersion>
 
   <parent>
-    <groupId>\${groupId}</groupId>
+    <groupId>org.sonatype.nexus.plugins</groupId>
     <artifactId>${rootArtifactId}-parent</artifactId>
     <version>${version}</version>
   </parent>
