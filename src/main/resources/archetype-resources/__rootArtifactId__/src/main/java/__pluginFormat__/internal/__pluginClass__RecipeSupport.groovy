@@ -43,8 +43,8 @@ import org.sonatype.nexus.repository.view.matchers.ActionMatcher
 import org.sonatype.nexus.repository.view.matchers.logic.LogicMatchers
 import org.sonatype.nexus.repository.view.matchers.token.TokenMatcher
 
-import static org.sonatype.nexus.plugins.foo.internal.util.${pluginClass}PathUtils.ASSET_FILENAME
-import static org.sonatype.nexus.plugins.foo.internal.util.${pluginClass}PathUtils.PACKAGE_FILENAME
+import static org.sonatype.nexus.plugins.${pluginFormat}.internal.util.${pluginClass}PathUtils.ASSET_FILENAME
+import static org.sonatype.nexus.plugins.${pluginFormat}.internal.util.${pluginClass}PathUtils.PACKAGE_FILENAME
 import static org.sonatype.nexus.repository.http.HttpMethods.GET
 import static org.sonatype.nexus.repository.http.HttpMethods.HEAD
 

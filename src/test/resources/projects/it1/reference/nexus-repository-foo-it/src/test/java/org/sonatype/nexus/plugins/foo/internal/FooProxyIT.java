@@ -35,7 +35,7 @@ public class FooProxyIT
     extends FooITSupport
 {
   // @todo Change test path for your format
-  private static final String TEST_PATH = "some/valid/path/for/foo/remote/" + PACKAGE_FILENAME;
+  private static final String TEST_PATH = "some/valid/path/for/your/remote/" + PACKAGE_FILENAME;
 
   private FooClient proxyClient;
 
