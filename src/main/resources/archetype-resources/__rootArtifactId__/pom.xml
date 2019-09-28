@@ -19,7 +19,7 @@
   <parent>
     <groupId>\${groupId}</groupId>
     <artifactId>${rootArtifactId}-parent</artifactId>
-    <version>${version}</version>
+    <version>\${version}</version>
   </parent>
 
   <artifactId>${rootArtifactId}</artifactId>

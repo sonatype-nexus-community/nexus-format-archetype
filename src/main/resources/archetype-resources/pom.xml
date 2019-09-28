@@ -25,7 +25,7 @@
   </parent>
 
   <artifactId>${rootArtifactId}-parent</artifactId>
-  <version>${version}</version>
+  <version>\${version}</version>
   <packaging>pom</packaging>
 
   <inceptionYear>${currentYear}</inceptionYear>
