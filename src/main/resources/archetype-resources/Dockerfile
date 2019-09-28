@@ -10,7 +10,7 @@ RUN cd /nexus-repository-${pluginFormat}/; \
 
 FROM sonatype/nexus3:$NEXUS_VERSION
 
-ARG FORMAT_VERSION=${version}
+ARG FORMAT_VERSION=\${version}
 ARG DEPLOY_DIR=/opt/sonatype/nexus/deploy/
 USER root
 COPY --from=build /nexus-repository-${pluginFormat}/nexus-repository-${pluginFormat}/target/nexus-repository-${pluginFormat}-${FORMAT_VERSION}-bundle.kar ${DEPLOY_DIR}
