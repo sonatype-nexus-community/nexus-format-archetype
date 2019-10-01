@@ -54,9 +54,6 @@
 
   <build>
     <plugins>
-      <!--
-      Ensure use of Java 8, as required by NXRM
-      -->
       <plugin>
         <artifactId>maven-enforcer-plugin</artifactId>
         <version>1.4.1</version>
@@ -68,9 +65,18 @@
             </goals>
             <configuration>
               <rules>
+                <!--
+                Ensure use of Java 8, as required by NXRM
+                -->
                 <requireJavaVersion>
                   <version>[1.8,1.9)</version>
                 </requireJavaVersion>
+                <!--
+                Require Maven 3.3.3+
+                -->
+                <requireMavenVersion>
+                  <version>[3.3.3,)</version>
+                </requireMavenVersion>
               </rules>
             </configuration>
           </execution>

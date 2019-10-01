@@ -129,9 +129,18 @@
             </goals>
             <configuration>
               <rules>
+                <!--
+                Require Java 8
+                -->
                 <requireJavaVersion>
                   <version>[1.8,1.9)</version>
                 </requireJavaVersion>
+                <!--
+                Require Maven 3.3.3+
+                -->
+                <requireMavenVersion>
+                  <version>[3.3.3,)</version>
+                </requireMavenVersion>
               </rules>
             </configuration>
           </execution>
