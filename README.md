@@ -102,5 +102,7 @@ You can manually run the archetype integration tests via:
     ---
     >   <packaging>bundle</packaging>
 
-  The first directory holds the "expected" (reference) output. The second directory holds the "actual" output generated 
+  In the command above, the first directory holds the "expected" (reference) output. The second directory holds the "actual" output generated 
   by running the archetype integration test. 
+
+  ![ITreferenceDiff](doc/images/diffITFolders.png)
