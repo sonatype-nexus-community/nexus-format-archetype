@@ -30,6 +30,7 @@ name="nexus-format-archetype">
         <include>Dockerfile</include>
         <include>.circleci/*</include>
         <include>.github/*</include>
+        <include>.gitignore</include>
       </includes>
     </fileSet>
   </fileSets>

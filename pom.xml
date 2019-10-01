@@ -101,6 +101,10 @@
       <testResource>
         <directory>src/test/resources</directory>
         <filtering>true</filtering>
+        <excludes>
+          <!-- Due to workaround to allow copy of hidden .gitignore file, avoid known Mac files from defaultExcludes. -->
+          <exclude>**/.DS_Store</exclude>
+        </excludes>
       </testResource>
     </testResources>
     <pluginManagement>
@@ -151,6 +155,8 @@
         <version>3.1.0</version>
         <configuration>
           <escapeString>\</escapeString>
+          <!-- allow copy of hidden .gitignore file. see: https://maven.apache.org/plugins/maven-resources-plugin/resources-mojo.html#addDefaultExcludes  -->
+          <addDefaultExcludes>false</addDefaultExcludes>
         </configuration>
       </plugin>
       <plugin><!--
