@@ -19,6 +19,9 @@ name="nexus-format-archetype">
     <requiredProperty key="version">
       <defaultValue>0.0.1-SNAPSHOT</defaultValue>
     </requiredProperty>
+    <requiredProperty key="gitignore">
+      <defaultValue>.gitignore</defaultValue>
+    </requiredProperty>
   </requiredProperties>
 
   <fileSets>
@@ -30,7 +33,7 @@ name="nexus-format-archetype">
         <include>Dockerfile</include>
         <include>.circleci/*</include>
         <include>.github/*</include>
-        <include>.gitignore</include>
+        <include>__gitignore__</include>
       </includes>
     </fileSet>
   </fileSets>
