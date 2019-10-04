@@ -61,7 +61,7 @@
 
   <properties>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-    <defaultNexusPluginsVersion>3.19.0-SNAPSHOT</defaultNexusPluginsVersion>
+    <defaultNexusPluginsVersion>3.19.0-01</defaultNexusPluginsVersion>
   </properties>
 
   <dependencyManagement>
