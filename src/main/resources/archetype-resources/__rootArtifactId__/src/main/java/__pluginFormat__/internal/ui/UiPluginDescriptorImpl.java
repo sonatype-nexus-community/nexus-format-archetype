@@ -25,7 +25,7 @@ public class UiPluginDescriptorImpl
     extends UiPluginDescriptorSupport
 {
   public UiPluginDescriptorImpl() {
-    super("${artifactId}");
+    super("${rootArtifactId}");
     setNamespace("NX.${pluginFormat}");
     setConfigClassName("NX.${pluginFormat}.app.PluginConfig");
   }
