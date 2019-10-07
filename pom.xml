@@ -116,6 +116,15 @@
             <ignoreEOLStyle>true</ignoreEOLStyle>
           </configuration>
         </plugin>
+        <plugin>
+          <groupId>org.sonatype.plugins</groupId>
+          <artifactId>nexus-staging-maven-plugin</artifactId>
+          <version>1.6.8</version>
+          <configuration>
+            <nexusUrl>${env.NEXUS_RM_SERVERURL}</nexusUrl>
+            <serverId>rso</serverId>
+          </configuration>
+        </plugin>
       </plugins>
     </pluginManagement>
     <plugins>
