@@ -24,7 +24,7 @@ Full documentation on installing `${pluginFormat}` can be found on [the ${plugin
 
 ### Proxying The ${pluginClass} repository
 
-You can create a proxy repository in Nexus Repository Manager that will cache packages from a remote ${pluginClass} repository, like
+You can create a proxy repository in Nexus Repository Manager (NXRM) that will cache packages from a remote ${pluginClass} repository, like
 [Add_Format_Repo_Name](https://add_format_repo_url/). Then, you can make the `${pluginFormat}` client use your Nexus Repository Proxy 
 instead of the remote repository.
  
@@ -36,11 +36,11 @@ detail. Minimal configuration steps are:
 - Define URL for 'Remote storage' - e.g. [https://add_format_repo_url/](https://add_format_repo_url/)
 - Select a `Blob store` for `Storage`
 
-Using the `${pluginFormat}` client, you can now download packages from your Nexus ${pluginClass} proxy like so:
+Using the `${pluginFormat}` client, you can now download packages from your NXRM ${pluginClass} proxy like so:
 
     $ add client command line example here
     
-The command above tells ${pluginFormat} to fetch (and install) packages from your Nexus ${pluginClass} proxy. The Nexus ${pluginClass} proxy will 
-download any missing packages from the remote ${pluginClass} repository, and cache the packages on the Nexus ${pluginClass} proxy.
-The next time any client requests the same package from your Nexus ${pluginClass} proxy, the already cached package will
+The command above tells ${pluginFormat} to fetch (and install) packages from your NXRM ${pluginClass} proxy. The NXRM ${pluginClass} proxy will 
+download any missing packages from the remote ${pluginClass} repository, and cache the packages on the NXRM ${pluginClass} proxy.
+The next time any client requests the same package from your NXRM ${pluginClass} proxy, the already cached package will
 be returned to the client.
