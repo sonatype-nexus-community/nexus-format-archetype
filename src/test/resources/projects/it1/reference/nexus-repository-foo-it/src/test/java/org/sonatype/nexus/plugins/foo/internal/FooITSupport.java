@@ -38,6 +38,7 @@ public class FooITSupport
 
   public FooITSupport() {
     testData.addDirectory(NexusPaxExamSupport.resolveBaseFile("target/it-resources/foo"));
+    testData.addDirectory(NexusPaxExamSupport.resolveBaseFile("target/test-classes/foo"));
   }
 
   @Nonnull
