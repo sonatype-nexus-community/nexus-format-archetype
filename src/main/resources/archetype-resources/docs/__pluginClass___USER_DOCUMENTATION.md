@@ -33,7 +33,8 @@ To proxy a ${pluginClass} repository, you simply create a new '${pluginFormat} (
 detail. Minimal configuration steps are:
 
 - Define 'Name' - e.g. `${pluginFormat}-proxy`
-- Define URL for 'Remote storage' e.g. [https://add_format_repo_url/](https://add_format_repo_url/)
+- Define URL for 'Remote storage' - e.g. [https://add_format_repo_url/](https://add_format_repo_url/)
+- Select a `Blob store` for `Storage`
 
 Using the `${pluginFormat}` client, you can now download packages from your Nexus ${pluginClass} proxy like so:
 
