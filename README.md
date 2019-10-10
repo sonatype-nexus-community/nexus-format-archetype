@@ -92,7 +92,7 @@ You can manually run the archetype integration tests via:
 
   This occurs when [archetype-resources](src/main/resources) files have been changed, 
   but the IT [reference](src/test/resources/projects/it1/reference) source files no longer match the output 
-  produced by the archetype. Any changes made to the files in the `archetype-resources` folder will have to be made to the corresponding files in the `resources` folder. One quick way to find out which files differ is to compare the following two
+  produced by the archetype. Any changes made to the files in the [archetype-resources](src/main/resources) folder will have to be made to the corresponding files in the [reference](src/test/resources/projects/it1/reference) folder. One quick way to find out which files differ is to compare the following two
   directories:
   
     $ diff -r target/test-classes/projects/it1/reference/ target/test-classes/projects/it1/project/nexus-repository-foo/
