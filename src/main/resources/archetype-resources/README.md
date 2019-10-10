@@ -75,7 +75,7 @@ For simplicity, you should check `Enable anonymous access` in the prompts follow
 
 #[[##]]# Using ${pluginClass} With Nexus Repository Manager 3
 
-[We have detailed instructions on how to get started here!](docs/${pluginClass}_USER_DOCUMENTATION.md)
+[We have detailed instructions on how to get started here!](docs/${pluginFormat}_user_documentation.md)
 
 #[[##]]# Compatibility with Nexus Repository Manager 3 Versions
 
@@ -115,7 +115,7 @@ then install the plugin with the options shown below:
 
 #[[###]]# Easiest Install
 
-Thanks to some upstream work in Nexus Repository (versions newer than 3.15), it's become a LOT easier to install a plugin. To install the `${pluginFormat}` plugin, follow these steps:
+Thanks to some upstream work in Nexus Repository, it's become a LOT easier to install a plugin. To install the `${pluginFormat}` plugin, follow these steps:
 
 * Build the plugin with `mvn clean package -PbuildKar`
 * Copy the `${rootArtifactId}-${version}-bundle.kar` file from your `target` folder to the `deploy` folder for your Nexus Repository installation.
