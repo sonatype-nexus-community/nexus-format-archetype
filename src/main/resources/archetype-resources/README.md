@@ -75,7 +75,7 @@ For simplicity, you should check `Enable anonymous access` in the prompts follow
 
 #[[##]]# Using ${pluginClass} With Nexus Repository Manager 3
 
-[We have detailed instructions on how to get started here!](docs/${pluginClass}_USER_DOCUMENTATION.md)
+[We have detailed instructions on how to get started here!](docs/${pluginFormat}_user_documentation.md)
 
 #[[##]]# Compatibility with Nexus Repository Manager 3 Versions
 
