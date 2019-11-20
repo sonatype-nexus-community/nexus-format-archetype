@@ -124,6 +124,13 @@
           maven-site-plugin:3.3:site failed: A required class was missing while executing org.apache.maven.plugins:maven-site-plugin:3.3:site: org/apache/maven/doxia/siterenderer/DocumentContent
           -->
           <version>3.8.2</version>
+          <configuration>
+            <!--
+            Fix error during release:
+            org.apache.maven.plugins:maven-site-plugin:3.8.2:deploy (default-deploy) on project nexus-format-archetype: Wagon protocol 'https' doesn't support directory copying
+            -->
+            <skipDeploy>true</skipDeploy>
+          </configuration>
         </plugin>
       </plugins>
     </pluginManagement>
