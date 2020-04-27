@@ -1,3 +1,4 @@
+#set( $currentDate = $package.getClass().forName("java.text.DateFormat").getDateInstance().format( $package.getClass().forName("java.util.Date").newInstance()) )
 <!--
 
     Sonatype Nexus (TM) Open Source Version
@@ -12,6 +13,7 @@
     Eclipse Foundation. All other trademarks are the property of their respective owners.
 
 -->
+<!-- generated with nexus-format-archetype version ${generatedByArchetypeVersion} on ${currentDate} -->
 # Nexus Repository ${pluginClass} Format
 
 [![Maven Central](https://img.shields.io/maven-central/v/org.sonatype.nexus.plugins/${rootArtifactId}.svg?label=Maven%20Central)](https://search.maven.org/search?q=g:%22org.sonatype.nexus.plugins%22%20AND%20a:%22${rootArtifactId}%22) [![CircleCI](https://circleci.com/gh/sonatype-nexus-community/${rootArtifactId}.svg?style=shield)](https://circleci.com/gh/sonatype-nexus-community/${rootArtifactId}) [![Join the chat at https://gitter.im/sonatype/nexus-developers](https://badges.gitter.im/sonatype/nexus-developers.svg)](https://gitter.im/sonatype/nexus-developers?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge) [![DepShield Badge](https://depshield.sonatype.org/badges/sonatype-nexus-community/${rootArtifactId}/depshield.svg)](https://depshield.github.io)

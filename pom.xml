@@ -63,6 +63,7 @@
   <properties>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     <defaultNexusPluginsVersion>3.19.0-01</defaultNexusPluginsVersion>
+    <generatedByArchetypeVersion>${project.version}</generatedByArchetypeVersion>
   </properties>
 
   <dependencyManagement>
@@ -183,7 +184,7 @@
         <version>3.0.0</version>
         <executions>
           <execution>
-            <id>timestamp-property</id>
+            <id>timestamp-year</id>
             <goals>
               <goal>timestamp-property</goal>
             </goals>
@@ -191,6 +192,17 @@
             <configuration>
               <name>ITReferenceYear</name>
               <pattern>yyyy</pattern>
+            </configuration>
+          </execution>
+          <execution>
+            <id>timestamp-date</id>
+            <goals>
+              <goal>timestamp-property</goal>
+            </goals>
+            <phase>validate</phase>
+            <configuration>
+              <name>ITReferenceDate</name>
+              <pattern>MMM d, yyyy</pattern>
             </configuration>
           </execution>
         </executions>
