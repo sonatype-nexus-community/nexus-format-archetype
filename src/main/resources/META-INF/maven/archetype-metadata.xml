@@ -3,6 +3,9 @@
 name="nexus-format-archetype">
 
   <requiredProperties>
+    <requiredProperty key="generatedByArchetypeVersion">
+      <defaultValue>${project.version}</defaultValue>
+    </requiredProperty>
     <requiredProperty key="nexusPluginsVersion">
       <defaultValue>${defaultNexusPluginsVersion}</defaultValue>
     </requiredProperty>

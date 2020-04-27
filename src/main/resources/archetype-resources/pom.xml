@@ -1,3 +1,4 @@
+#set( $currentDate = $package.getClass().forName("java.text.DateFormat").getDateInstance().format( $package.getClass().forName("java.util.Date").newInstance()) )
 #set( $currentYear = $package.getClass().forName("java.util.Date").newInstance().getYear() + 1900 )
 #set( $capitalPluginFormat = $pluginFormat.substring(0, 1).toUpperCase() + $pluginFormat.substring(1) )
 <?xml version="1.0" encoding="UTF-8"?>
@@ -15,6 +16,7 @@
     Eclipse Foundation. All other trademarks are the property of their respective owners.
 
 -->
+<!-- generated with nexus-format-archetype version ${generatedByArchetypeVersion} on ${currentDate} -->
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
   <modelVersion>4.0.0</modelVersion>
 
