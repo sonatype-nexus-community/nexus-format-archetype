@@ -2,66 +2,43 @@ version: 2.1
 
 orbs:
   github-maven-deploy: github-maven-deploy/github-maven-deploy@1.0.5
-
-mvn-build-test-command: &mvn-build-test-command
-  mvn-build-test-command: mvn clean verify -PbuildKar -Dit
-
-mvn-deploy-command: &mvn-deploy-command
-  mvn-deploy-command: mvn -s .circleci/.maven.xml clean deploy -PbuildKar -DdeployAtEnd=true -DperformRelease=true -DskipTests -Dspotbugs.skip=true
-  context: rso-base
-
-mvn-collect-artifacts-command: &mvn-collect-artifacts-command
-  mvn-collect-artifacts-command: |
-    mkdir -p ~/project/artifacts/junit/
-    find . -type f -regex ".*/target/surefire-reports/.*xml" -exec cp {} ~/project/artifacts/junit/ \;
-    cp ~/project/${rootArtifactId}-it/target/failsafe-reports/*.xml ~/project/artifacts/junit/
+  circleci-maven-release-orb: sonatype-nexus-community/circleci-maven-release-orb@dev:alpha
 
 workflows:
-  workflow:
+  build:
     jobs:
       - github-maven-deploy/build-and-test:
-          <<: *mvn-build-test-command
-          <<: *mvn-collect-artifacts-command
+          mvn-build-test-command: mvn clean verify -PbuildKar -Dit
+          mvn-collect-artifacts-command: |
+            mkdir -p ~/project/artifacts/junit/
+            find . -type f -regex ".*/target/surefire-reports/.*xml" -exec cp {} ~/project/artifacts/junit/ \;
+            cp ~/project/${rootArtifactId}-it/target/failsafe-reports/*.xml ~/project/artifacts/junit/
 
-      - github-maven-deploy/approve-deploy-patch-version:
+  run-release:
+    jobs:
+      - approve-release:
           type: approval
-          requires:
-            - github-maven-deploy/build-and-test
           filters:
             branches:
               only: master
-      - github-maven-deploy/approve-deploy-minor-version:
-          type: approval
+      - circleci-maven-release-orb/run-maven-release:
           requires:
-            - github-maven-deploy/build-and-test
+            - approve-release
+          ssh-fingerprints: "yo:ur:ss:hf:in:ge:rp:ri:nt:he:re..."
+          context: rso-base
+          mvn-release-prepare-command: mvn --batch-mode release:prepare -DscmCommentPrefix="[skip ci] [maven-release-plugin] " -PbuildKar
           filters:
             branches:
               only: master
-      - github-maven-deploy/approve-deploy-major-version:
-          type: approval
+
+  release-via-tag:
+    jobs:
+      - circleci-maven-release-orb/run-maven-release:
           requires:
-            - github-maven-deploy/build-and-test
-          filters:
-            branches:
-              only: master
-      - github-maven-deploy/deploy-patch-version:
-          requires:
-            - github-maven-deploy/approve-deploy-patch-version
-          <<: *mvn-deploy-command
-          filters:
-            branches:
-              only: master
-      - github-maven-deploy/deploy-minor-version:
-          requires:
-            - github-maven-deploy/approve-deploy-minor-version
-          <<: *mvn-deploy-command
-          filters:
-            branches:
-              only: master
-      - github-maven-deploy/deploy-major-version:
-          requires:
-            - github-maven-deploy/approve-deploy-major-version
-          <<: *mvn-deploy-command
+            - approve-release
+          ssh-fingerprints: "yo:ur:ss:hf:in:ge:rp:ri:nt:he:re..."
+          context: rso-base
+          mvn-release-prepare-command: mvn --batch-mode release:prepare -DscmCommentPrefix="[skip ci] [maven-release-plugin] " -PbuildKar
           filters:
             branches:
               only: master
