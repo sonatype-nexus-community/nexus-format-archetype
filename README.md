@@ -19,7 +19,7 @@ Build the archetype:
 
 Change directory to a new folder where you wish to generate the format boilerplate code.
 
-NOTE: In all the commands below where you see `-DarchetypeVersion=1.0-SNAPSHOT` please be sure you replace
+**NOTE**: In all the commands below where you see `-DarchetypeVersion=1.0-SNAPSHOT` please be sure you replace
 `1.0-SNAPSHOT` with the latest version of the archetype, like the numeric part of the version shown on the "Maven Central" badge above.
  
 Generating a format plugin is as easy as running the following:
