@@ -28,3 +28,12 @@ workflows:
           filters:
             branches:
               only: master
+
+  release-via-tag:
+    jobs:
+      - circleci-maven-release-orb/run-maven-release:
+          ssh-fingerprints: "8d:5d:f4:21:d2:b1:aa:52:93:de:2c:bf:43:ad:64:95"
+          context: rso-base
+          filters:
+            branches:
+              only: master
