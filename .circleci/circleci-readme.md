@@ -22,3 +22,15 @@ The local build runs in a docker container.
       However, the build will proceed and can complete “successfully”, which allows you to verify scripts in your config, etc.
       
       If the build does complete successfully, you should see a happy yellow `Success!` message.
+
+  * You can perform a release by pushing a git tag as shown below.
+  
+    1. Checkout/pull the latest `master` branch, and create a new tag with the desired semantic version and a helpful note:
+      
+           git tag -a v0.1.x -m "Helpful message in tag."
+             
+    2. Push the tag up:
+      
+           git push origin v0.1.x
+             
+    3. There is no step 3.
