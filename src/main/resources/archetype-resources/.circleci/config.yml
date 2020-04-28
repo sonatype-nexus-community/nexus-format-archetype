@@ -6,7 +6,7 @@ orbs:
 
 build-and-test: &build-and-test
   github-maven-deploy/build-and-test:
-    mvn-build-test-command: mvn clean verify -PbuildKar -Dit
+      mvn-build-test-command: mvn clean verify -PbuildKar -Dit
       mvn-collect-artifacts-command: |
         mkdir -p ~/project/artifacts/junit/
         find . -type f -regex ".*/target/surefire-reports/.*xml" -exec cp {} ~/project/artifacts/junit/ \;
