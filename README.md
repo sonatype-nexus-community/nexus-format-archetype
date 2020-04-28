@@ -23,7 +23,12 @@ Change directory to a new folder where you wish to generate the format boilerpla
 `1.0-SNAPSHOT` with the latest version of the archetype, like the numeric part of the version shown on the "Maven Central" badge above.
  
 Generating a format plugin is as easy as running the following:
-     
+(Recommended) Optional parameters can be omitted. A short example using default parameter values:
+
+    mvn archetype:generate -DarchetypeArtifactId=nexus-format-archetype -DarchetypeGroupId=org.sonatype.nexus.archetypes -DarchetypeVersion=1.0-SNAPSHOT -DpluginFormat=foo -DpluginClass=Foo
+
+The examples below show include optional parameters:
+      
     mvn archetype:generate                              \ 
       -DarchetypeArtifactId=nexus-format-archetype      \
       -DarchetypeGroupId=org.sonatype.nexus.archetypes  \
@@ -37,10 +42,6 @@ Repeated for the "newline" challenged:
 
     mvn archetype:generate -DarchetypeArtifactId=nexus-format-archetype -DarchetypeGroupId=org.sonatype.nexus.archetypes -DarchetypeVersion=1.0-SNAPSHOT -DartifactId=nexus-repository-foo -DpluginFormat=foo -DpluginClass=Foo -Dversion=0.0.1
     
-Optional parameters can be omitted. A shorter example using default parameter values:
-
-    mvn archetype:generate -DarchetypeArtifactId=nexus-format-archetype -DarchetypeGroupId=org.sonatype.nexus.archetypes -DarchetypeVersion=1.0-SNAPSHOT -DpluginFormat=foo -DpluginClass=Foo
-
 #### Required parameters:
 
 Coordinates of the archetype:
