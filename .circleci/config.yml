@@ -4,14 +4,24 @@ orbs:
   github-maven-deploy: github-maven-deploy/github-maven-deploy@1.0.5
   circleci-maven-release-orb: sonatype-nexus-community/circleci-maven-release-orb@0.0.15
 
+build-and-test: &build-and-test
+  github-maven-deploy/build-and-test:
+      mvn-build-test-command: mvn clean verify archetype:integration-test
+      mvn-collect-artifacts-command: |
+        mkdir -p ~/project/artifacts/junit/
+        # no reporting files to collect from archetype:integration-test goal
+
+release-args: &release-args
+  ssh-fingerprints: "8d:5d:f4:21:d2:b1:aa:52:93:de:2c:bf:43:ad:64:95"
+  context: rso-base
+  filters:
+    branches:
+      only: master
+
 workflows:
   build-and-test:
     jobs:
-      - github-maven-deploy/build-and-test:
-          mvn-build-test-command: mvn clean verify archetype:integration-test
-          mvn-collect-artifacts-command: |
-            mkdir -p ~/project/artifacts/junit/
-            # no reporting files to collect from archetype:integration-test goal
+      - <<: *build-and-test
 
   run-release:
     jobs:
@@ -23,19 +33,13 @@ workflows:
       - circleci-maven-release-orb/run-maven-release:
           requires:
             - approve-release
-          ssh-fingerprints: "8d:5d:f4:21:d2:b1:aa:52:93:de:2c:bf:43:ad:64:95"
-          context: rso-base
-          filters:
-            branches:
-              only: master
+          <<: *release-args
 
-  release-via-tag:
+  release-from-master:
     jobs:
+      - <<: *build-and-test
       - circleci-maven-release-orb/run-maven-release:
-          ssh-fingerprints: "8d:5d:f4:21:d2:b1:aa:52:93:de:2c:bf:43:ad:64:95"
-          context: rso-base
-          filters:
-            branches:
-              only: master
-            tags:
-              only: /v[0-9]+(\.[0-9]+)*(-.*)*/
+          requires:
+            - github-maven-deploy/build-and-test
+          <<: *release-args
+
