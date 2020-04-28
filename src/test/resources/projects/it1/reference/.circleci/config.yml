@@ -13,6 +13,7 @@ build-and-test: &build-and-test
         cp ~/project/nexus-repository-foo-it/target/failsafe-reports/*.xml ~/project/artifacts/junit/
 
 release-args: &release-args
+  mvn-release-prepare-command: MAVEN_OPTS=-Xmx3072m mvn --batch-mode release:prepare -DscmCommentPrefix="[skip ci] [maven-release-plugin] " -PbuildKar -DskipTests
   ssh-fingerprints: "yo:ur:ss:hf:in:ge:rp:ri:nt:he:re..."
   context: rso-base
   filters:
