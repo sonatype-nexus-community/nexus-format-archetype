@@ -11,21 +11,12 @@
 Archetype for creating Nexus format plugin with a _lot_ of the boilerplate required to start development already created.
 
 ## How to create a format
-Once the code has been checked out.
+1. Change directory to a new folder where you wish to generate the format boilerplate code.
 
-Build the archetype:
-
-    mvn clean install
-
-Change directory to a new folder where you wish to generate the format boilerplate code.
-
-**NOTE**: In all the commands below where you see `-DarchetypeVersion=1.0.REPLACE_WITH_LATEST_ARCHETYPE_VERSION` please be sure you replace
-`1.0.REPLACE_WITH_LATEST_ARCHETYPE_VERSION` with the latest version of the archetype, like the numeric part of the version shown on the "Maven Central" badge above.
+    **NOTE**: In all the commands below where you see `-DarchetypeVersion=1.0.REPLACE_WITH_LATEST_ARCHETYPE_VERSION` please be sure you replace
+    `1.0.REPLACE_WITH_LATEST_ARCHETYPE_VERSION` with the latest version of the archetype, like the numeric part of the version shown on the "Maven Central" badge above.
  
-Generating a format plugin is as easy as running the following:
-(Recommended) Optional parameters can be omitted. A short example using default parameter values:
-
-    mvn archetype:generate -DarchetypeArtifactId=nexus-format-archetype -DarchetypeGroupId=org.sonatype.nexus.archetypes -DarchetypeVersion=1.0.REPLACE_WITH_LATEST_ARCHETYPE_VERSION -DpluginFormat=foo -DpluginClass=Foo
+2. Generating a format plugin is as easy as running the following:
 
 The examples below show include optional parameters:
       
@@ -70,7 +61,11 @@ It is recommended to keep the naming of the following parameters consistent with
 **version** = _The version of the format to be developed_ (default: 0.0.1-SNAPSHOT)     
 
 ## How to contribute to this archetype
+Once the code has been checked out.
 
+Build the archetype:
+
+    mvn clean install
 The standard [Maven Archetype Plugin](https://maven.apache.org/archetype/maven-archetype-plugin/index.html) 
 docs are a good place to start.
 
