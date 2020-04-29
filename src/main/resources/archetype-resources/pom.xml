@@ -37,6 +37,10 @@
     <module>${rootArtifactId}-it</module>
   </modules>
 
+  <scm>
+    <developerConnection>scm:git:git@github.com:sonatype-nexus-community/${rootArtifactId}.git</developerConnection>
+    <tag>HEAD</tag>
+  </scm>
   <distributionManagement>
     <snapshotRepository>
       <id>ossrh</id>
@@ -86,21 +90,38 @@
           </execution>
         </executions>
       </plugin>
+
+      <plugin>
+        <groupId>org.sonatype.plugins</groupId>
+        <artifactId>nexus-staging-maven-plugin</artifactId>
+        <version>1.6.8</version>
+        <extensions>true</extensions>
+        <configuration>
+          <serverId>rso</serverId>
+          <nexusUrl>https://repository.sonatype.org/</nexusUrl>
+          <autoReleaseAfterClose>true</autoReleaseAfterClose>
+        </configuration>
+      </plugin>
+
+      <plugin>
+        <artifactId>maven-release-plugin</artifactId>
+        <configuration>
+          <!-- Something in the pom hierarchy overrides the default 'pushChanges == true', so we reset that here. -->
+          <pushChanges>true</pushChanges>
+          <releaseProfiles>gpg-sign</releaseProfiles>
+          <!-- Tests will have been run by CI prior to release. -->
+          <arguments>-DskipTests</arguments>
+        </configuration>
+      </plugin>
     </plugins>
   </build>
 
   <profiles>
     <profile>
-      <id>deploy</id>
+      <id>gpg-sign</id>
       <!--
       only sign during deploy phase
       -->
-      <activation>
-        <property>
-          <name>performRelease</name>
-          <value>true</value>
-        </property>
-      </activation>
       <build>
         <plugins>
           <plugin>
@@ -122,20 +143,11 @@
               </execution>
             </executions>
           </plugin>
-
-          <plugin>
-            <groupId>org.sonatype.plugins</groupId>
-            <artifactId>nexus-staging-maven-plugin</artifactId>
-            <version>1.6.7</version>
-            <extensions>true</extensions>
-            <configuration>
-              <serverId>rso</serverId>
-              <nexusUrl>https://repository.sonatype.org/</nexusUrl>
-              <autoReleaseAfterClose>true</autoReleaseAfterClose>
-            </configuration>
-          </plugin>
         </plugins>
       </build>
+      <properties>
+        <gpg.passphrase>${env.GPG_PASSPHRASE}</gpg.passphrase>
+      </properties>
     </profile>
   </profiles>
 </project>
