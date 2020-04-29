@@ -4,13 +4,12 @@ orbs:
   github-maven-deploy: github-maven-deploy/github-maven-deploy@1.0.5
   circleci-maven-release-orb: sonatype-nexus-community/circleci-maven-release-orb@0.0.15
 
-build-and-test: &build-and-test
-  github-maven-deploy/build-and-test:
-      mvn-build-test-command: mvn clean verify -PbuildKar -Dit
-      mvn-collect-artifacts-command: |
-        mkdir -p ~/project/artifacts/junit/
-        find . -type f -regex ".*/target/surefire-reports/.*xml" -exec cp {} ~/project/artifacts/junit/ \;
-        cp ~/project/${rootArtifactId}-it/target/failsafe-reports/*.xml ~/project/artifacts/junit/
+build-and-test-commands: &build-and-test-commands
+  mvn-build-test-command: mvn clean verify -PbuildKar -Dit
+  mvn-collect-artifacts-command: |
+    mkdir -p ~/project/artifacts/junit/
+    find . -type f -regex ".*/target/surefire-reports/.*xml" -exec cp {} ~/project/artifacts/junit/ \;
+    find . -type f -regex ".*/target/failsafe-reports/.*xml" -exec cp {} ~/project/artifacts/junit/ \;
 
 release-args: &release-args
   mvn-release-prepare-command: MAVEN_OPTS=-Xmx3072m mvn --batch-mode release:prepare -DscmCommentPrefix="[skip ci] [maven-release-plugin] " -PbuildKar -DskipTests
@@ -21,9 +20,13 @@ release-args: &release-args
       only: master
 
 workflows:
-  build:
+  build-branch:
     jobs:
-      - <<: *build-and-test
+      - github-maven-deploy/build-and-test:
+          <<: *build-and-test-commands
+          filters:
+            branches:
+              ignore: master
 
   run-release:
     jobs:
@@ -39,7 +42,11 @@ workflows:
 
   release-from-master:
     jobs:
-      - <<: *build-and-test
+      - github-maven-deploy/build-and-test:
+          <<: *build-and-test-commands
+          filters:
+            branches:
+              only: master
       - circleci-maven-release-orb/run-maven-release:
           requires:
             - github-maven-deploy/build-and-test
