@@ -16,22 +16,9 @@ Archetype for creating Nexus format plugin with a _lot_ of the boilerplate requi
     **NOTE**: In all the commands below where you see `-DarchetypeVersion=1.0.REPLACE_WITH_LATEST_ARCHETYPE_VERSION` please be sure you replace
     `1.0.REPLACE_WITH_LATEST_ARCHETYPE_VERSION` with the latest version of the archetype, like the numeric part of the version shown on the "Maven Central" badge above.
  
-2. Generating a format plugin is as easy as running the following:
-
-The examples below show include optional parameters:
-      
-    mvn archetype:generate                              \ 
-      -DarchetypeArtifactId=nexus-format-archetype      \
-      -DarchetypeGroupId=org.sonatype.nexus.archetypes  \
-      -DarchetypeVersion=1.0.REPLACE_WITH_LATEST_ARCHETYPE_VERSION         \
-      -DartifactId=nexus-repository-foo                 \
-      -DpluginFormat=foo                                \
-      -DpluginClass=Foo                                 \
-      -Dversion=0.0.1-SNAPSHOT
-
-Repeated for the "newline" challenged:
-
-    mvn archetype:generate -DarchetypeArtifactId=nexus-format-archetype -DarchetypeGroupId=org.sonatype.nexus.archetypes -DarchetypeVersion=1.0.REPLACE_WITH_LATEST_ARCHETYPE_VERSION -DartifactId=nexus-repository-foo -DpluginFormat=foo -DpluginClass=Foo -Dversion=0.0.1-SNAPSHOT
+2. Generating a format plugin is as easy as running the following:   
+   
+       mvn archetype:generate -DarchetypeArtifactId=nexus-format-archetype -DarchetypeGroupId=org.sonatype.nexus.archetypes -DarchetypeVersion=1.0.REPLACE_WITH_LATEST_ARCHETYPE_VERSION -DpluginFormat=foo -DpluginClass=Foo      
     
 #### Required parameters:
 
