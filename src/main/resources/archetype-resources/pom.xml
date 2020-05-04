@@ -1,5 +1,6 @@
 #set( $currentDate = $package.getClass().forName("java.text.DateFormat").getDateInstance().format( $package.getClass().forName("java.util.Date").newInstance()) )
 #set( $currentYear = $package.getClass().forName("java.util.Date").newInstance().getYear() + 1900 )
+#set( $defaultPluginFormat = "nexus-repository-" + $pluginFormat )
 #set( $capitalPluginFormat = $pluginFormat.substring(0, 1).toUpperCase() + $pluginFormat.substring(1) )
 <?xml version="1.0" encoding="UTF-8"?>
 <!--

@@ -14,7 +14,7 @@ name="nexus-format-archetype">
     </requiredProperty>
     <requiredProperty key="pluginFormat"></requiredProperty>
     <requiredProperty key="artifactId">
-      <defaultValue>nexus-repository-${pluginFormat}</defaultValue>
+      <defaultValue>${defaultPluginFormat}</defaultValue>
     </requiredProperty>
     <requiredProperty key="pluginClass">
       <defaultValue>${capitalPluginFormat}</defaultValue>
