@@ -39,7 +39,7 @@ It is recommended to keep the naming of the following parameters consistent with
 #### Optional parameters:
 
 **nexusPluginsVersion** = _The version of Nexus to use in the format to be developed_ 
-(default: Declared as a property in the archetype [pom.xml ~line 62-> defaultNexusPluginsVersion](./pom.xml#L62]))
+(default: Declared as a property in the archetype [pom.xml ~line 65-> defaultNexusPluginsVersion](./pom.xml#L65]))
 
 **artifactId** = _The artifactId of the format to be developed_ (default: nexus-repository-${pluginFormat})
 
