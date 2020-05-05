@@ -26,24 +26,35 @@ The local build runs in a docker container.
 Miscellaneous
 -------------
 
-To allow your CI build to push changes back to github (e.g. release tags, etc), you need to create setup
- a github "Deploy Key" with write access. The command below will create such a key. Use an empty password.
- See: https://circleci.com/docs/2.0/add-ssh-key/#steps
+* Write Key setup
 
-    ssh-keygen -m PEM -t rsa -b 4096 -C "community-group@sonatype.com" -f <project-name>_github_rsa.key
+  To allow your CI build to push changes back to github (e.g. release tags, etc), you need to create
+  a github **Deploy Key** with **write** access. The command below will create such a key. Use an empty password.
+  See: [CircleCI-Add ssh key](https://circleci.com/docs/2.0/add-ssh-key/#steps) for more details.
+  
+  1. Generate a new ssh key:
     
-Paste the public key into a new "write" enabled GitHub deploy key with Title: CircleCI Write <project name>
+         ssh-keygen -m PEM -t rsa -b 4096 -C "community-group@sonatype.com" -f <project-name>_github_rsa.key
+        
+  2. Copy the public key to your clipboard:
+  
+         cat <project-name>_github_rsa.key.pub | pbcopy
 
-Be sure you check the "Allow write access" option.
-
-    cat <project-name>_github_rsa.key.pub | pbcopy
+     Paste the public key into a new **write** enabled **GitHub deploy key** with Title: `CircleCI Write <project name>`
     
-In the CircleCI Web UI, under Permissions -> SSH Permissions -> Add SSH Key, enter "Hostname": github.com
+     Be sure you check the "Allow write access" option. 
+     Did I mention this key needs write access? (Don't ask how many times I forgot this).
+  
+  3. Copy the private key to your clipboard:  
+        
+         cat <project-name>_github_rsa.key | pbcopy        
 
-Paste the private key.
-
-    cat <project-name>_github_rsa.key | pbcopy        
-
-As a sanity check, the private key should end with `-----END RSA PRIVATE KEY-----`.
-
-Also update the `ssh-fingerprints:` tag in your config.yml to append the fingerprint of the write key.
+     In the CircleCI Web UI, under Project Settings (top right gear) -> SSH Keys -> Additional SSH Keys -> Add SSH Key, 
+     enter "Hostname": `github.com`
+    
+     Paste the private key.
+        
+     As a sanity check, the private key should end with `-----END RSA PRIVATE KEY-----`.
+    
+  4. Update the `ssh-fingerprints:` tag in your [config.yml](config.yml) to the fingerprint of the write key.
+     This fingerprint is visible in the CircleCI web ui after you add the private key.
