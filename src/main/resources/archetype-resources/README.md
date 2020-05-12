@@ -22,6 +22,7 @@
 
 * [Developing](#developing)
    * [Requirements](#requirements)
+   * [Download](#download)
    * [Building](#building)
 * [Using ${pluginClass} with Nexus Repository Manager 3](#using-${pluginFormat}-with-nexus-repository-manager-3)
 * [Compatibility with Nexus Repository Manager 3 Versions](#compatibility-with-nexus-repository-manager-3-versions)
@@ -47,6 +48,10 @@
 Also, there is a good amount of information available at [Bundle Development](https://help.sonatype.com/display/NXRM3/Bundle+Development).
 
 You may also find it helpful to configure your IDE to use the [Sonatype Code style](https://github.com/sonatype/codestyle).
+
+#[[###]]# Download
+
+ Find pre-compiled files [here](https://search.maven.org/search?q=g:%22org.sonatype.nexus.plugins%22%20AND%20a:%22${rootArtifactId}%22).
 
 #[[###]]# Building
 
