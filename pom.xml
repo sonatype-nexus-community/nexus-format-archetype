@@ -4,7 +4,7 @@
 
   <groupId>org.sonatype.nexus.archetypes</groupId>
   <artifactId>nexus-format-archetype</artifactId>
-  <version>1.0.40</version>
+  <version>1.0.41-SNAPSHOT</version>
 
   <name>Nexus Format Plugin Archetype</name>
   <description>Archetype to create a nexus format plugin</description>
@@ -42,7 +42,7 @@
   <scm>
     <connection>scm:git:https://github.com/sonatype-nexus-community/nexus-format-archetype.git</connection>
     <url>https://github.com/sonatype-nexus-community/nexus-format-archetype</url>
-    <tag>nexus-format-archetype-1.0.40</tag>
+    <tag>HEAD</tag>
   </scm>
   <distributionManagement>
     <site>
