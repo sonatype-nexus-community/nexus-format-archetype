@@ -89,7 +89,7 @@
       <exclusions>
         <!-- Avoid leaking older format plugin from distro -->
         <exclusion>
-          <groupId>org.sonatype.nexus.plugins</groupId>
+          <groupId>\${groupId}</groupId>
           <artifactId>${rootArtifactId}</artifactId>
         </exclusion>
       </exclusions>
