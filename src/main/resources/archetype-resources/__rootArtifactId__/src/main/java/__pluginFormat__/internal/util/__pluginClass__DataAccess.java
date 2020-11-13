@@ -15,6 +15,7 @@ package org.sonatype.nexus.plugins.${pluginFormat}.internal.util;
 import java.io.IOException;
 import java.io.InputStream;
 import java.util.List;
+import java.util.function.Supplier;
 
 import javax.annotation.Nullable;
 import javax.inject.Named;
@@ -34,7 +35,6 @@ import org.sonatype.nexus.repository.view.Content;
 import org.sonatype.nexus.repository.view.Payload;
 import org.sonatype.nexus.repository.view.payloads.BlobPayload;
 
-import com.google.common.base.Supplier;
 import com.google.common.collect.ImmutableList;
 
 import static java.util.Collections.singletonList;
