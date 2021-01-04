@@ -10,6 +10,8 @@
 
 A [Maven Archetype](https://maven.apache.org/guides/introduction/introduction-to-archetypes.html) for creating a Nexus format plugin with a _lot_ of the boilerplate required to start development already created.
 
+See the [nexus-development-guides](https://sonatype-nexus-community.github.io/nexus-development-guides/) for more information about developing a plugin for a new format.
+
 ## How to create a format
 1. Change directory to a new folder where you wish to generate the format boilerplate code.
 
