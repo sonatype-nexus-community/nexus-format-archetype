@@ -92,4 +92,9 @@ You can manually run the archetype integration tests via:
 
   ![ITreferenceDiff](doc/images/diffITFolders.png)
 
+#### Releasing
  
+Releases occur automatically after a commit to the `master` branch. 
+
+To avoid performing a release after a commit to `master`, be sure your commit message includes `[skip ci] `.
+
