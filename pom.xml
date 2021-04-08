@@ -230,6 +230,7 @@
               <name>ITReferenceDate</name>
               <pattern>MMM d, yyyy</pattern>
               <!-- TODO: could see IT failures due to generated on date being non-GMT. -->
+              <timeZone>EST</timeZone>
 <!--
               <unit>day</unit>
               <offset>-1</offset>
