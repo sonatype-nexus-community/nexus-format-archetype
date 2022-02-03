@@ -62,6 +62,7 @@
 
   <properties>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+    <project.build.outputTimestamp>10</project.build.outputTimestamp>
     <maven-archetype-version>3.2.0</maven-archetype-version>
     <defaultNexusPluginsVersion>3.28.1-01</defaultNexusPluginsVersion>
     <generatedByArchetypeVersion>${project.version}</generatedByArchetypeVersion>
@@ -133,6 +134,10 @@
             -->
             <skipDeploy>true</skipDeploy>
           </configuration>
+        </plugin>
+        <plugin>
+          <artifactId>maven-jar-plugin</artifactId>
+          <version>3.2.2</version>
         </plugin>
       </plugins>
     </pluginManagement>
