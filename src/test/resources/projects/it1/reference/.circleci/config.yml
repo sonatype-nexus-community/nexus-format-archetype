@@ -45,7 +45,7 @@ workflows:
       - build_and_test:
           filters:
             branches:
-              ignore: master
+              ignore: main
 
   run-release:
     jobs:
@@ -64,7 +64,7 @@ workflows:
       - build_and_test:
           filters:
             branches:
-              only: master
+              only: main
       - circleci-maven-release-orb/run-maven-release:
           requires:
             - build_and_test
