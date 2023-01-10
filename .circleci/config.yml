@@ -15,7 +15,7 @@ release-args: &release-args
   context: rso-base
   filters:
     branches:
-      only: master
+      only: main
 
 workflows:
   build-branch:
@@ -24,7 +24,7 @@ workflows:
           <<: *build-and-test-commands
           filters:
             branches:
-              ignore: master
+              ignore: main
 
   run-release:
     jobs:
@@ -32,19 +32,19 @@ workflows:
           type: approval
           filters:
             branches:
-              only: master
+              only: main
       - circleci-maven-release-orb/run-maven-release:
           requires:
             - approve-release
           <<: *release-args
 
-  release-from-master:
+  release-from-main:
     jobs:
       - github-maven-deploy/build-and-test:
           <<: *build-and-test-commands
           filters:
             branches:
-              only: master
+              only: main
       - circleci-maven-release-orb/run-maven-release:
           requires:
             - github-maven-deploy/build-and-test

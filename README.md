@@ -94,7 +94,7 @@ You can manually run the archetype integration tests via:
 
 #### Releasing
  
-Releases occur automatically after a commit to the `master` branch. 
+Releases occur automatically after a commit to the `main` branch. 
 
-To avoid performing a release after a commit to `master`, be sure your commit message includes `[skip ci] `.
+To avoid performing a release after a commit to `main`, be sure your commit message includes `[skip ci] `.
 

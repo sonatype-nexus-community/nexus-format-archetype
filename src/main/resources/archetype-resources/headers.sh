@@ -12,5 +12,5 @@ case "$op" in
         exit 1
 esac
 
-# still depends on profiles defined in https://github.com/sonatype/buildsupport/blob/master/pom.xml
+# still depends on profiles defined in https://github.com/sonatype/buildsupport/blob/main/pom.xml
 mvn -f ./pom.xml -N -P license-${op} "$@"
