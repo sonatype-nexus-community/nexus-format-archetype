@@ -264,7 +264,7 @@
         <plugins>
           <plugin>
             <artifactId>maven-gpg-plugin</artifactId>
-            <version>1.6</version>
+            <version>3.2.6</version>
             <executions>
               <execution>
                 <id>sign-artifacts</id>
@@ -272,20 +272,11 @@
                 <goals>
                   <goal>sign</goal>
                 </goals>
-                <configuration>
-                  <gpgArguments>
-                    <arg>--pinentry-mode</arg>
-                    <arg>loopback</arg>
-                  </gpgArguments>
-                </configuration>
               </execution>
             </executions>
           </plugin>
         </plugins>
       </build>
-      <properties>
-        <gpg.passphrase>${env.GPG_PASSPHRASE}</gpg.passphrase>
-      </properties>
     </profile>
   </profiles>
 </project>
