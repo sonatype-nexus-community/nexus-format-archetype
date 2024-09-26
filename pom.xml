@@ -4,7 +4,7 @@
 
   <groupId>org.sonatype.nexus.archetypes</groupId>
   <artifactId>nexus-format-archetype</artifactId>
-  <version>1.0.62-SNAPSHOT</version>
+  <version>1.0.63-SNAPSHOT</version>
 
   <name>Nexus Format Plugin Archetype</name>
   <description>Archetype to create a nexus format plugin</description>
@@ -62,7 +62,7 @@
 
   <properties>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-    <project.build.outputTimestamp>1726443406</project.build.outputTimestamp>
+    <project.build.outputTimestamp>1727367181</project.build.outputTimestamp>
     <maven-archetype-version>3.3.0</maven-archetype-version>
     <defaultNexusPluginsVersion>3.28.1-01</defaultNexusPluginsVersion>
     <generatedByArchetypeVersion>${project.version}</generatedByArchetypeVersion>
