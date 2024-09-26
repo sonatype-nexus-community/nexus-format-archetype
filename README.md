@@ -6,7 +6,6 @@
 [![Maven Central](https://img.shields.io/maven-central/v/org.sonatype.nexus.archetypes/nexus-format-archetype.svg?label=Maven%20Central)](https://search.maven.org/artifact/org.sonatype.nexus.archetypes/nexus-format-archetype)
 [![CircleCI](https://circleci.com/gh/sonatype-nexus-community/nexus-format-archetype.svg?style=shield)](https://circleci.com/gh/sonatype-nexus-community/nexus-format-archetype) 
 [![Join the chat at https://gitter.im/sonatype/nexus-developers](https://badges.gitter.im/sonatype/nexus-developers.svg)](https://gitter.im/sonatype/nexus-developers?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
-[![DepShield Badge](https://depshield.sonatype.org/badges/sonatype-nexus-community/nexus-format-archetype/depshield.svg)](https://depshield.github.io)
 
 A [Maven Archetype](https://maven.apache.org/guides/introduction/introduction-to-archetypes.html) for creating a Nexus format plugin with a _lot_ of the boilerplate required to start development already created.
 
