@@ -187,7 +187,7 @@
 
       <plugin>
         <artifactId>maven-resources-plugin</artifactId>
-        <version>3.1.0</version>
+        <version>3.3.1</version>
         <configuration>
           <escapeString>\</escapeString>
           <!-- allow copy of hidden .gitignore file. see: https://maven.apache.org/plugins/maven-resources-plugin/resources-mojo.html#addDefaultExcludes  -->
