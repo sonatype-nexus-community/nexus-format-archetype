@@ -135,7 +135,7 @@
       -->
       <plugin>
         <artifactId>maven-enforcer-plugin</artifactId>
-        <version>1.4.1</version>
+        <version>3.5.0</version>
         <executions>
           <execution>
             <id>enforce-java</id>
