@@ -4,7 +4,7 @@
 
   <groupId>org.sonatype.nexus.archetypes</groupId>
   <artifactId>nexus-format-archetype</artifactId>
-  <version>1.0.67-SNAPSHOT</version>
+  <version>1.0.72-SNAPSHOT</version>
 
   <name>Nexus Format Plugin Archetype</name>
   <description>Archetype to create a nexus format plugin</description>
@@ -62,8 +62,8 @@
 
   <properties>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-    <project.build.outputTimestamp>1738772330</project.build.outputTimestamp>
-    <maven-archetype-version>3.3.0</maven-archetype-version>
+    <project.build.outputTimestamp>1739292617</project.build.outputTimestamp>
+    <maven-archetype-version>3.3.1</maven-archetype-version>
     <defaultNexusPluginsVersion>3.28.1-01</defaultNexusPluginsVersion>
     <generatedByArchetypeVersion>${project.version}</generatedByArchetypeVersion>
   </properties>
@@ -88,7 +88,7 @@
         <directory>src/main/resources</directory>
         <filtering>true</filtering>
         <excludes>
-          <!-- Due to workaround to allow copy of hidden .gitignore file, avoid known Mac files from defaultExcludes. -->
+          <!-- fix error when trying to copy binary files, like .DS_Store, to target. eg: failed with MalformedInputException: Input length = 1 -> [Help 1] -->
           <exclude>**/.DS_Store</exclude>
         </excludes>
       </resource>
@@ -194,7 +194,7 @@
 
       <plugin>
         <artifactId>maven-resources-plugin</artifactId>
-        <version>3.1.0</version>
+        <version>3.3.1</version>
         <configuration>
           <escapeString>\</escapeString>
           <!-- allow copy of hidden .gitignore file. see: https://maven.apache.org/plugins/maven-resources-plugin/resources-mojo.html#addDefaultExcludes  -->
@@ -207,7 +207,7 @@
         -->
         <groupId>org.codehaus.mojo</groupId>
         <artifactId>build-helper-maven-plugin</artifactId>
-        <version>3.0.0</version>
+        <version>3.6.0</version>
         <executions>
           <execution>
             <id>timestamp-year</id>
@@ -259,7 +259,7 @@
         <plugins>
           <plugin>
             <artifactId>maven-gpg-plugin</artifactId>
-            <version>3.2.6</version>
+            <version>3.2.7</version>
             <executions>
               <execution>
                 <id>sign-artifacts</id>
