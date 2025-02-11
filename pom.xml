@@ -87,6 +87,10 @@
       <resource>
         <directory>src/main/resources</directory>
         <filtering>true</filtering>
+        <excludes>
+          <!-- Due to workaround to allow copy of hidden .gitignore file, avoid known Mac files from defaultExcludes. -->
+          <exclude>**/.DS_Store</exclude>
+        </excludes>
       </resource>
     </resources>
     <testResources>
@@ -126,6 +130,9 @@
         <plugin>
           <artifactId>maven-jar-plugin</artifactId>
           <version>3.4.2</version>
+          <configuration>
+            <addDefaultExcludes>false</addDefaultExcludes>
+          </configuration>
         </plugin>
       </plugins>
     </pluginManagement>
