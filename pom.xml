@@ -87,6 +87,10 @@
       <resource>
         <directory>src/main/resources</directory>
         <filtering>true</filtering>
+        <excludes>
+          <!-- fix error when trying to copy binary files, like .DS_Store, to target. eg: failed with MalformedInputException: Input length = 1 -> [Help 1] -->
+          <exclude>**/.DS_Store</exclude>
+        </excludes>
       </resource>
     </resources>
     <testResources>
